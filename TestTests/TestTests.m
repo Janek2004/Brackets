@@ -50,8 +50,8 @@
     [t addTeam:@"Jack/Michelle"];
     [t addTeam:@"Ian/Patchi"];
     [t addTeam:@"Mallory/Zack"];
-    [t addTeam:@"Ian/Patchi"];
-    [t addTeam:@"Mallory/Zack"];
+  //  [t addTeam:@"Ian/Patchi"];
+  // [t addTeam:@"Mallory/Zack"];
     
     [t setFormat:kSingleElimination];
     

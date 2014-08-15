@@ -17,7 +17,7 @@ typedef enum {
 }TournamentMode;
 
 
-@interface Tournament : NSObject
+@interface Tournament : NSObject 
 
 @property (nonatomic,strong) NSDate * date;
 @property (nonatomic,strong) NSString * name;

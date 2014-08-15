@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TournamentProtocol.h"
 
 @interface JMCTournamentView : UIView
+-(id)initWithTournament:(id<TournamentProtocol>) tournament;
 
 @end

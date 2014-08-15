@@ -8,7 +8,7 @@
 
 #import "JMCTournamentView.h"
 #import "JMCGameView.h"
-#import "TournamentProtocol.h"
+
 #import "Game.h"
 
 
@@ -18,6 +18,9 @@
 #define MARGIN 25
 
 @interface JMCTournamentView()
+{
+    NSUInteger numberOfLevels;
+}
 @property(nonatomic,strong)id <TournamentProtocol> tournament;
 
 @end
@@ -51,11 +54,11 @@
     NSUInteger margin = MARGIN;
     self.tournament = tournament;
 
-    
-    
+    numberOfLevels = [tournament numberOfLevels];
     
     //calculate frame based on number of levels
-    NSUInteger width = [tournament numberOfLevels]* game_width;
+    NSUInteger width = numberOfLevels * game_width;
+
     //tournament
     NSUInteger gamesNr =[tournament maxNumberOfVerticalGames];
     NSUInteger height = (gamesNr -1 ) * min_game_space + gamesNr * min_game_height + 2 * margin;
@@ -66,7 +69,7 @@
     if (self) {
         // Initialization code
         //add games
-        
+        [self addGames:[tournament getTournamentRoot]];
     }
     return self;
 }
@@ -89,10 +92,13 @@
     NSMutableArray * nodes= [NSMutableArray new];
     [nodes addObject:root]; //enqueue
     currentNodes++;
-    
+    NSUInteger currentIndex = 0;
     while (nodes.count>0) {
         //dequee
         Game * g = [nodes lastObject];
+        [self drawGame:g atLevel:currentLevel index:currentIndex];
+        currentIndex ++;
+        
         [nodes removeLastObject];
         currentNodes--;
         //draw game at certain level
@@ -106,6 +112,7 @@
         if(currentNodes==0){
             currentNodes = nextLevelNodes;
             currentLevel++;
+            currentIndex = 0;
         }
     }
 }
@@ -117,63 +124,70 @@
  *  @param index     vertical index
  *  @param gameLevel all games
  */
--(void)drawGameAtLevel:(NSUInteger)level index:(NSUInteger)index totalNumberOfLevelGames:(NSUInteger)gameLevel{
+-(void)drawGame:(Game*)game atLevel:(NSUInteger)level index:(NSUInteger)index{
     //if first level put game in the center
     //if second
     
     //we can start from 60
     //
+    //reverse levels
+    //if level =1 -> maxlevels level 2 => max Level -1
+    //if level =3 -> maxlevels-2 level 4 => max Level -5
     
-    if(level == [_tournament numberOfLevels]){
-        //index
-      //  NSUInteger y = MARGIN + index * MIN_GAME_HEIGHT;
-        
-    }
+    //maxlevels -(level -1)
+    //maxLevels - (level -1)
     
-    //last level games are on margin and than margin + game_height + space between
-    //next level games are on (game at index) height/2.0 and so on
-    //how can find how they relate to eachother? recursively?
+    NSUInteger levelToDraw = numberOfLevels -(level -1);
+    
+    NSUInteger game_number = index + 1;
+    NSUInteger game_height = 100;
+    NSUInteger margin = 10;
+    NSUInteger space = 25;
+    NSUInteger gameY1= 0;
+    NSUInteger gameY2= 0;
+    
+    
+    gameY1 = margin;
+    
+    gameY2 = margin + game_height + space;
+    
+    
+    for (int i =1; i<levelToDraw; i++) {
 
-    /*
-    -
-        -
-    -
-            -
-    -
-        -
-    -
+            gameY1 = margin +game_height/2.0;
+            gameY2 = gameY2 +game_height/2.0;
+            margin = gameY1;
+            space = space + game_height;
+            game_height = gameY2 - gameY1;
+     }
     
-     calculate height span between first and last game in level one
-     
-     */
+    gameY1 = margin + (game_number -1)* game_height + (game_number -1)*space;
     
-    NSUInteger max_game_span = CGRectGetHeight(self.frame)- 2 * (MARGIN + MIN_GAME_HEIGHT/2.0);
+    CGRect frame = CGRectMake(level * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
     
-    //difference between levels / 1.5?
-    //level down
-    //first game will be from:
-    //MARGIN + MIN_GAME_HEIGHT/2.0
-    //MARGIN + MIN_GAME_HEIGHT/2.0 + second game_y+MIN_GAME_HEIGHT/2.0
-
-    //second level first game will be previous first_game_y + first_game_width/2.0
+    JMCGameView * gm = [[JMCGameView alloc]initWithGame:game andFrame:frame];
+    [self addSubview:gm];
+    
 }
 
 -(void)checkGameY{
     NSUInteger level = 1;
     NSUInteger game_number = 2;
-    
     NSUInteger game_height = 100;
-    NSUInteger margin = 0;
+    NSUInteger margin = 10;
     NSUInteger space = 25;
     NSUInteger gameY1= 0;
     NSUInteger gameY2= 0;
     
+    
+    gameY1 = margin;
+   
+    gameY2 = margin + game_height + space;
+
+    
     for (int i =0; i<level; i++) {
         if(i==0){
-            gameY1 = margin;
-            game_height = 100;
-            gameY2 = margin + game_height + space;
-        
+            
         }
         else{
             gameY1 = margin +game_height/2.0;
@@ -183,7 +197,10 @@
             game_height = gameY2 - gameY1;
         }
     }
-    //so we have y and space so we can calculate easily where should we draw the games
+    
+    gameY1 = margin + (game_number -1)* game_height + (game_number -1)*space;
+    
+    CGRectMake(level * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
     
 }
 

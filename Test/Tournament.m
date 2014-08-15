@@ -165,7 +165,7 @@
     return NULL;
 }
 -(id)getTournamentTree;{
-   return  [(SingleElimination *) self.tournament root];
+   return  [(SingleElimination *) self.tournament getTournamentRoot];
 }
 
 
