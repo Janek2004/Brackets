@@ -11,5 +11,7 @@
 
 @interface JMCTournamentView : UIView
 -(id)initWithTournament:(id<TournamentProtocol>) tournament;
+-(CGFloat)calculateHeight:(NSUInteger)nrVerticalGames;
+-(CGRect)calculateGameFrameAtLevel:(NSUInteger)level index:(NSUInteger)index;
 
 @end

@@ -126,7 +126,6 @@
     Team * team = [Team new];
     team.name = teamName;
 
-    //reset bracket
     [self.teams addObject:team];
     int i =1;
     for(id team in self.teams){

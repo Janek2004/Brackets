@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A41993103300B245CF /* JMCTournamentView.m */; };
+		82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
+		82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
 		82EA7D11198F36890044D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D10198F36890044D7AE /* Foundation.framework */; };
 		82EA7D13198F36890044D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D12198F36890044D7AE /* CoreGraphics.framework */; };
 		82EA7D15198F36890044D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D14198F36890044D7AE /* UIKit.framework */; };
@@ -52,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82C679AD199F17E000B75C1F /* DoubleElimination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleElimination.h; sourceTree = "<group>"; };
+		82C679AE199F17E000B75C1F /* DoubleElimination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleElimination.m; sourceTree = "<group>"; };
 		82EA7D0D198F36890044D7AE /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D10198F36890044D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82EA7D12198F36890044D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,6 +213,8 @@
 				82FD06A71993339D00B245CF /* Game.m */,
 				82FD06A81993339D00B245CF /* SingleElimination.h */,
 				82FD06A91993339D00B245CF /* SingleElimination.m */,
+				82C679AD199F17E000B75C1F /* DoubleElimination.h */,
+				82C679AE199F17E000B75C1F /* DoubleElimination.m */,
 				82FD06AA1993339D00B245CF /* Team.h */,
 				82FD06AB1993339D00B245CF /* Team.m */,
 				82FD06B0199333E300B245CF /* Stats.h */,
@@ -325,6 +332,7 @@
 				82EA7D1D198F36890044D7AE /* main.m in Sources */,
 				82FD06AD1993339D00B245CF /* SingleElimination.m in Sources */,
 				82FD06A51993103300B245CF /* JMCTournamentView.m in Sources */,
+				82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */,
 				82EA7D21198F36890044D7AE /* JMCAppDelegate.m in Sources */,
 				82FD06DC1997B68B00B245CF /* Score.m in Sources */,
 				82FD06AC1993339D00B245CF /* Game.m in Sources */,
@@ -340,12 +348,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FD06D71997B63B00B245CF /* Team.m in Sources */,
+				82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */,
 				82FD06D51997B63600B245CF /* Game.m in Sources */,
 				82FD06D61997B63900B245CF /* SingleElimination.m in Sources */,
 				82FD06D81997B63E00B245CF /* Stats.m in Sources */,
 				82FD06D91997B64000B245CF /* TournamentUtilities.m in Sources */,
 				82FD06D41997B5D400B245CF /* Tournament.m in Sources */,
 				82FD06DD1997B68B00B245CF /* Score.m in Sources */,
+				82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */,
 				82EA7D3C198F36890044D7AE /* TestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

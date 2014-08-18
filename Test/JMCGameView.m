@@ -7,6 +7,8 @@
 //
 
 #import "JMCGameView.h"
+#import "Game.h"
+
 
 @interface JMCGameView()
     @property (nonatomic,strong) UIButton * team1Button;
@@ -16,7 +18,7 @@
     @property (nonatomic,strong) UIImage * gameInfoImage;
 
 
-@property (nonatomic,strong)  id game;
+@property (nonatomic,strong)  Game * game;
 
 @end
 
@@ -64,7 +66,7 @@
 
 
 -(id)initWithGame:(id)game andFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+    self = [self initWithFrame:frame];
     self.game = game;
     if (self) {
         
@@ -79,17 +81,11 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [self drawCanvas1WithTeam1Name:@"Erick/Taylor" team2Name:@"Charlie/Chealsea" gameNumber:@"11" height:CGRectGetHeight(self.frame)/2.0 horizontal_topy:25 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:0];
+    [self drawCanvas1WithTeam1Name:[self.game.team1 name] team2Name:[self.game.team2 name] gameNumber:[NSString stringWithFormat:@"%@",self.game.number]     height:CGRectGetHeight(self.frame)-25 horizontal_topy:25 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:0];
     
-    /*
-    [self drawCanvas1WithTeam1Name:@"Janek/Taylor" team2Name:@"Keith/Chealsea" gameNumber:@"12" height:60 horizontal_topy:130 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:0];
     
-    [self drawCanvas1WithTeam1Name:@"Janek/Taylor" team2Name:@"Keith/Chealsea" gameNumber:@"13" height:105 horizontal_topy:55 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:162];
     
-    */
-    
-    // Drawing code
-}
+  }
 
 -(void)drawButtonsWithgameNumberExpression:(CGFloat)gameNumberExpression  bottomy:(CGFloat)team2BackgroundExpression topy:(CGFloat)team1BackgroundExpression{
     CGFloat buttonSize = 23;
@@ -99,15 +95,15 @@
     gameNumberExpression=gameNumberExpression+2;
     
     self.team1Button.frame= CGRectMake(94.5,team1BackgroundExpression,buttonSize,buttonSize);
-    self.team2Button.frame= CGRectMake(94.5,team2BackgroundExpression,buttonSize,buttonSize);
-    self.gameButton.frame = CGRectMake(127.5, gameNumberExpression, buttonSize, buttonSize);
+    self.team2Button.frame= CGRectMake(94.5,team2BackgroundExpression-25/2.0,buttonSize,buttonSize);
+    self.gameButton.frame = CGRectMake(127.5, gameNumberExpression-25/2.0, buttonSize, buttonSize);
     
 }
 
 
 - (void)drawCanvas1WithTeam1Name: (NSString*)team1Name team2Name: (NSString*)team2Name gameNumber: (NSString*)gameNumber height: (CGFloat)height horizontal_topy: (CGFloat)horizontal_topy team2LabelHeight: (CGFloat)team2LabelHeight team2BackgroundHeight: (CGFloat)team2BackgroundHeight team_font_size: (CGFloat)team_font_size left_boundary: (CGFloat)left_boundary;
 {
-       //// General Declarations
+    //// General Declarations
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
@@ -119,45 +115,40 @@
     CGFloat horizontal_expression = horizontal_topy + height;
     CGFloat gameNumberExpression = horizontal_topy + height / 2.0 - 12;
     CGFloat horizontalCenterExpression = horizontal_topy + height / 2.0;
-    CGFloat team1BackgroundExpression = horizontal_topy + 1 - 28.0 / 2.0;
     CGFloat team1TextExpression = horizontal_topy + 1 - 20.0 / 2.0;
     CGFloat team2LabelExpression = horizontal_topy + height - team2LabelHeight / 2.0;
-    CGFloat team2BackgroundExpression = horizontal_topy + height - team2BackgroundHeight / 2.0;
+    CGFloat team2BackgroundExpression =-4+ horizontal_topy + height - team2BackgroundHeight / 2.0;
     CGFloat left_team_background_expression = left_boundary + 19.5;
     CGFloat left_label_expression = left_boundary + 22.5;
     CGFloat left_game_number_expression = left_boundary + 105;
     CGFloat left_vertical_line_expression = left_boundary + 133;
     
-  
-    
-    
-    
     //// vertical_center Drawing
-    UIBezierPath* vertical_centerPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, horizontalCenterExpression, 30, 2)];
+    UIBezierPath* vertical_centerPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, (horizontalCenterExpression - 13), 30, 2)];
     [color2 setFill];
     [vertical_centerPath fill];
     
     
     //// horizontal_top Drawing
-    UIBezierPath* horizontal_topPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, horizontal_topy, 135, 2)];
+    UIBezierPath* horizontal_topPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, (horizontal_topy - 12), 135, 2)];
     [color2 setFill];
     [horizontal_topPath fill];
     
     
     //// horizontal_bottom Drawing
-    UIBezierPath* horizontal_bottomPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, horizontal_expression, 135, 2)];
+    UIBezierPath* horizontal_bottomPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, (horizontal_expression - 12), 135, 2)];
     [color2 setFill];
     [horizontal_bottomPath fill];
     
     
     //// vertical Drawing
-    UIBezierPath* verticalPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, horizontal_topy, 2, height)];
+    UIBezierPath* verticalPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, (horizontal_topy - 12), 2, height)];
     [color2 setFill];
     [verticalPath fill];
     
     
     //// team1Background Drawing
-    UIBezierPath* team1BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, team1BackgroundExpression, 100, 28) cornerRadius: 2];
+    UIBezierPath* team1BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, 1, 100, 28) cornerRadius: 2];
     [color setFill];
     [team1BackgroundPath fill];
     [color2 setStroke];
@@ -166,7 +157,7 @@
     
     
     //// team1Label Drawing
-    CGRect team1LabelRect = CGRectMake(left_label_expression, team1TextExpression, 73.5, 20.5);
+    CGRect team1LabelRect = CGRectMake(left_label_expression, (team1TextExpression - 12), 73.5, 20.5);
     NSMutableParagraphStyle* team1LabelStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     team1LabelStyle.alignment = NSTextAlignmentLeft;
     
@@ -176,7 +167,7 @@
     
     
     //// team2Background Drawing
-    UIBezierPath* team2BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, team2BackgroundExpression, 100, 28) cornerRadius: 2];
+    UIBezierPath* team2BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, (team2BackgroundExpression - 11.5), 100, 28) cornerRadius: 2];
     [color setFill];
     [team2BackgroundPath fill];
     [color2 setStroke];
@@ -185,7 +176,7 @@
     
     
     //// team2Label Drawing
-    CGRect team2LabelRect = CGRectMake(left_label_expression, (team2LabelExpression - 2), 73.5, 20.5);
+    CGRect team2LabelRect = CGRectMake(left_label_expression, (team2LabelExpression - 14), 73.5, 20.5);
     NSMutableParagraphStyle* team2LabelStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     team2LabelStyle.alignment = NSTextAlignmentLeft;
     
@@ -197,7 +188,7 @@
     //// Group
     {
         CGContextSaveGState(context);
-        CGContextTranslateCTM(context, left_game_number_expression, gameNumberExpression);
+        CGContextTranslateCTM(context, left_game_number_expression, (gameNumberExpression - 12));
         
         
         
@@ -229,12 +220,14 @@
         
         CGContextRestoreGState(context);
     }
-    [self drawButtonsWithgameNumberExpression:gameNumberExpression  bottomy:team2BackgroundExpression topy:team1BackgroundExpression];
+    [self drawButtonsWithgameNumberExpression:gameNumberExpression  bottomy:team2BackgroundExpression topy:0];
 }
+
 
 
 -(UIImage *)drawCanvas4;
 {
+
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(24, 24), NO, 0.0);
 //    UIGraphicsBeginImageContext(CGSizeMake(24, 24));
     //// Color Declarations

@@ -15,6 +15,8 @@
 #import "Score.h"
 #import "Team.h"
 #import "TournamentProtocol.h"
+#import "JMCTournamentView.h"
+
 
 
 //#import "To"
@@ -38,6 +40,96 @@
     [super tearDown];
 }
 
+-(void)testHeight{
+    Tournament * t = [[Tournament alloc]init];
+    
+    [t addTeam:@"Janek / Taylor"];
+    [t addTeam:@"Keith/Megan "];
+    [t addTeam:@"Charlie/Chelsea"];
+    [t addTeam:@"Eric/Meghan"];
+//    [t addTeam:@"Jack/Michelle"];
+//    [t addTeam:@"Ian/Patchi"];
+//    [t addTeam:@"Mallory/Zack"];
+//  [t addTeam:@"Ian/Patchi"];
+// [t addTeam:@"Mallory/Zack"];
+    [t setFormat:kSingleElimination];
+
+    NSUInteger nrgames = [t.tournament maxNumberOfVerticalGames];
+    //for 4 teams that should be 2
+    assert(nrgames == 2);
+    
+    JMCTournamentView * tv = [[JMCTournamentView alloc]initWithTournament:t.tournament];
+    assert([tv calculateHeight:nrgames]==315);
+    
+    t = [[Tournament alloc]init];
+    
+    [t addTeam:@"Janek / Taylor"];
+    [t addTeam:@"Keith/Megan "];
+    [t addTeam:@"Charlie/Chelsea"];
+    [t addTeam:@"Eric/Meghan"];
+    [t addTeam:@"Jack/Michelle"];
+    [t addTeam:@"Ian/Patchi"];
+    [t addTeam:@"Mallory/Zack"];
+    //  [t addTeam:@"Ian/Patchi"];
+    // [t addTeam:@"Mallory/Zack"];
+    [t setFormat:kSingleElimination];
+    
+    nrgames = [t.tournament maxNumberOfVerticalGames];
+    //for 4 teams that should be 2
+    assert(nrgames == 4);
+    
+    tv = [[JMCTournamentView alloc]initWithTournament:t.tournament];
+    assert([tv calculateHeight:nrgames]==605);
+   
+}
+
+-(void)testPlacement{
+    Tournament * t = [[Tournament alloc]init];
+    
+    [t addTeam:@"Janek / Taylor"];
+    [t addTeam:@"Keith/Megan "];
+    [t addTeam:@"Charlie/Chelsea"];
+    [t addTeam:@"Eric/Meghan"];
+
+    [t addTeam:@"Janek / Taylor"];
+    [t addTeam:@"Keith/Megan "];
+    [t addTeam:@"Charlie/Chelsea"];
+    [t addTeam:@"Eric/Meghan"];
+
+    
+    
+    [t setFormat:kSingleElimination];
+    
+    JMCTournamentView * tv = [[JMCTournamentView alloc]initWithTournament:t.tournament];
+    CGRect frame = [tv calculateGameFrameAtLevel:3 index:3];
+    
+    
+    NSLog(@"a ");
+    
+    
+}
+
+
+
+-(void)test8TeamSingleElimination{
+    Tournament * t = [[Tournament alloc]init];
+    
+    [t addTeam:@"Janek / Taylor"];
+    [t addTeam:@"Keith/Megan "];
+    [t addTeam:@"Charlie/Chelsea"];
+    [t addTeam:@"Eric/Meghan"];
+    [t addTeam:@"Jack/Michelle"];
+    [t addTeam:@"Ian/Patchi"];
+    [t addTeam:@"Mallory/Zack"];
+    [t addTeam:@"Ian/Patchi"];
+    
+    
+    // [t addTeam:@"Mallory/Zack"];
+    
+    [t setFormat:kSingleElimination];
+
+    displayBracket([t.tournament getTournamentRoot]);
+}
 
 
 -(void)testSingleElimination{
@@ -50,8 +142,10 @@
     [t addTeam:@"Jack/Michelle"];
     [t addTeam:@"Ian/Patchi"];
     [t addTeam:@"Mallory/Zack"];
-  //  [t addTeam:@"Ian/Patchi"];
-  // [t addTeam:@"Mallory/Zack"];
+    [t addTeam:@"Ian/Patchi"];
+  
+    
+    // [t addTeam:@"Mallory/Zack"];
     
     [t setFormat:kSingleElimination];
     
@@ -129,9 +223,47 @@
     //NSLog(@"Teams in order: %@ ",[t getTeamsInOrder]);
     
     NSLog(@"Get Schedule: %@", [t getTournamentSchedule]);
+
+}
+
+void displayBracket(Game * root){
+    NSMutableArray * games =[NSMutableArray new];
+    NSMutableArray * queue= [NSMutableArray new];
+    NSUInteger nodesInNextLevel = 0;
+    NSUInteger nodesInCurrentLevel = 0;
     
-
-
+    
+    [queue addObject:root];
+    
+    
+    while(queue.count>0){
+        Game * g= queue.lastObject;
+        NSLog(@"Game %@ ",g);
+        
+        [queue removeLastObject];
+        nodesInCurrentLevel--;
+        
+        //loop through all games at this level probably it can be called after the level is traversed
+        
+        if(g.team1!=NULL &&g.team2!=NULL){
+            [games addObject:g];
+        }
+        
+        NSArray *nodes =   g.getChildrenNodes;
+        
+        for(Game * child in nodes){
+            [queue insertObject:child atIndex:0];
+            nodesInNextLevel++;
+        }
+        
+        if(nodesInCurrentLevel == 0){
+            //here we know all the nodes on current level so we should determine what to do with the losers
+            NSLog(@"_______");
+            nodesInCurrentLevel = nodesInNextLevel;
+            nodesInNextLevel = 0;
+            
+        }
+    }
 }
 
 

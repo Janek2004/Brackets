@@ -12,10 +12,10 @@
 #import "Game.h"
 
 
-#define GAME_WIDTH 200
+#define GAME_WIDTH 160
 #define MIN_GAME_HEIGHT 120
 #define MIN_GAME_SPACE 25
-#define MARGIN 25
+#define MARGIN 30
 
 @interface JMCTournamentView()
 {
@@ -49,21 +49,17 @@
     CGRect frame;
    
     NSUInteger game_width = GAME_WIDTH;
-    NSUInteger min_game_height = MIN_GAME_HEIGHT;
-    NSUInteger min_game_space = MIN_GAME_SPACE;
-    NSUInteger margin = MARGIN;
-    self.tournament = tournament;
-
-    numberOfLevels = [tournament numberOfLevels];
+     self.tournament = tournament;
+    numberOfLevels = [tournament numberOfLevels] -1;
     
     //calculate frame based on number of levels
     NSUInteger width = numberOfLevels * game_width;
 
     //tournament
-    NSUInteger gamesNr =[tournament maxNumberOfVerticalGames];
-    NSUInteger height = (gamesNr -1 ) * min_game_space + gamesNr * min_game_height + 2 * margin;
+     NSUInteger gamesNr =[self.tournament maxNumberOfVerticalGames];
     
-    frame = CGRectMake(0, 0, width, height);
+    
+    frame = CGRectMake(0, 0, width, [self calculateHeight:gamesNr]);
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -74,20 +70,27 @@
     return self;
 }
 
+-(CGFloat)calculateHeight:(NSUInteger)nrVerticalGames{
+  
+    CGFloat height = (nrVerticalGames -1 ) * MIN_GAME_SPACE + nrVerticalGames * MIN_GAME_HEIGHT + 2 * MARGIN ;
+    return height;
+}
+
+
 /**
  *  Traverse a tree to to prepare information necassary for drawing the game views
  *
  *  @param root root of the tree
  */
 -(void)addGames:(Game *)root{
-    //?games for level?
-    //that would be probably the easiest. Otherwise I could try to have breadth first traversal
-    //I could have a method that returns
-    //with a depth traversal I would have to start from the root which will be kind of akward
-    //pehaps tournament should have a method for adding views??
+    
+    if(!root) return;
+    
     NSUInteger currentNodes=0;
     NSUInteger nextLevelNodes=0;
-    NSUInteger currentLevel = 1;
+    NSUInteger currentLevel = 0;
+    
+    
     
     NSMutableArray * nodes= [NSMutableArray new];
     [nodes addObject:root]; //enqueue
@@ -107,10 +110,12 @@
         NSArray * children = [g getChildrenNodes];
         for(Game * g1 in children){
             [nodes addObject:g1];
+            nextLevelNodes++;
         }
         
         if(currentNodes==0){
             currentNodes = nextLevelNodes;
+            nextLevelNodes =0;
             currentLevel++;
             currentIndex = 0;
         }
@@ -120,87 +125,51 @@
 /**
  *  Draws game depending on level, index
  *
- *  @param level     level (1 is last)
+ *  @param level     level first element 0 is a root next elements
  *  @param index     vertical index
  *  @param gameLevel all games
  */
--(void)drawGame:(Game*)game atLevel:(NSUInteger)level index:(NSUInteger)index{
-    //if first level put game in the center
-    //if second
+
+-(CGRect)calculateGameFrameAtLevel:(NSUInteger)level index:(NSUInteger)index{
+    //decreasing maximum number of levels to start from 0 not 1
+    //level = level -1;
+    NSUInteger levelToDraw = numberOfLevels - level;
     
-    //we can start from 60
-    //
-    //reverse levels
-    //if level =1 -> maxlevels level 2 => max Level -1
-    //if level =3 -> maxlevels-2 level 4 => max Level -5
-    
-    //maxlevels -(level -1)
-    //maxLevels - (level -1)
-    
-    NSUInteger levelToDraw = numberOfLevels -(level -1);
-    
-    NSUInteger game_number = index + 1;
-    NSUInteger game_height = 100;
-    NSUInteger margin = 10;
-    NSUInteger space = 25;
-    NSUInteger gameY1= 0;
-    NSUInteger gameY2= 0;
+    NSUInteger game_number = index;
+    CGFloat game_height = MIN_GAME_HEIGHT;
+    CGFloat margin = MARGIN;
+    CGFloat space = MIN_GAME_SPACE;
+
+    CGFloat gameY1= 0;
+    CGFloat gameY2= 0;
     
     
     gameY1 = margin;
-    
     gameY2 = margin + game_height + space;
     
+    //it calculates size and positioning depending on the function arguments, the challenge here is that we are reversing levels. It means that if we try to calculate position of the final game, we are passing level 0 but we need to display it at max nr levels times game_width
     
-    for (int i =1; i<levelToDraw; i++) {
+    for (int i =0; i<levelToDraw; i++) {
+        
+        gameY1 =  -13.5+ margin +game_height/2.0;
+        gameY2 =  11.5+ gameY2 +game_height/2.0;
+        margin = gameY1;
+        space = space + game_height;
+        game_height = gameY2 - gameY1;
+    }
+    
+    gameY1 = margin + game_number* game_height + game_number*space;
+    //adjust game
 
-            gameY1 = margin +game_height/2.0;
-            gameY2 = gameY2 +game_height/2.0;
-            margin = gameY1;
-            space = space + game_height;
-            game_height = gameY2 - gameY1;
-     }
-    
-    gameY1 = margin + (game_number -1)* game_height + (game_number -1)*space;
-    
-    CGRect frame = CGRectMake(level * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
+    CGRect frame = CGRectMake(levelToDraw * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
+    return frame;
+}
+
+-(void)drawGame:(Game*)game atLevel:(NSUInteger)level index:(NSUInteger)index{
+    CGRect frame =[self calculateGameFrameAtLevel:level index:index];
     
     JMCGameView * gm = [[JMCGameView alloc]initWithGame:game andFrame:frame];
     [self addSubview:gm];
-    
-}
-
--(void)checkGameY{
-    NSUInteger level = 1;
-    NSUInteger game_number = 2;
-    NSUInteger game_height = 100;
-    NSUInteger margin = 10;
-    NSUInteger space = 25;
-    NSUInteger gameY1= 0;
-    NSUInteger gameY2= 0;
-    
-    
-    gameY1 = margin;
-   
-    gameY2 = margin + game_height + space;
-
-    
-    for (int i =0; i<level; i++) {
-        if(i==0){
-            
-        }
-        else{
-            gameY1 = margin +game_height/2.0;
-            gameY2 = gameY2 +game_height/2.0;
-            margin = gameY1;
-            space = space + game_height;
-            game_height = gameY2 - gameY1;
-        }
-    }
-    
-    gameY1 = margin + (game_number -1)* game_height + (game_number -1)*space;
-    
-    CGRectMake(level * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
     
 }
 
