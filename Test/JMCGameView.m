@@ -29,7 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor clearColor];
+        //self.backgroundColor = [UIColor clearColor];
         self.team1Button = [UIButton buttonWithType:UIButtonTypeInfoLight];
         self.team2Button = [UIButton buttonWithType:UIButtonTypeInfoLight];
         self.gameButton = [UIButton buttonWithType:UIButtonTypeCustom];

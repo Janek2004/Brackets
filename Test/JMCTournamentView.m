@@ -50,7 +50,7 @@
    
     NSUInteger game_width = GAME_WIDTH;
      self.tournament = tournament;
-    numberOfLevels = [tournament numberOfLevels] -1;
+    numberOfLevels = [tournament numberOfLevels];
     
     //calculate frame based on number of levels
     NSUInteger width = numberOfLevels * game_width;
@@ -90,22 +90,20 @@
     NSUInteger nextLevelNodes=0;
     NSUInteger currentLevel = 0;
     
-    
-    
+
     NSMutableArray * nodes= [NSMutableArray new];
     [nodes addObject:root]; //enqueue
     currentNodes++;
-    NSUInteger currentIndex = 0;
+ 
     while (nodes.count>0) {
         //dequee
         Game * g = [nodes lastObject];
-        [self drawGame:g atLevel:currentLevel index:currentIndex];
-        currentIndex ++;
-        
+        //draw game at certain level
+        [self drawGame:g atLevel:currentLevel index:g.displayIndex];
+
         [nodes removeLastObject];
         currentNodes--;
-        //draw game at certain level
-        
+
         
         NSArray * children = [g getChildrenNodes];
         for(Game * g1 in children){
@@ -117,7 +115,6 @@
             currentNodes = nextLevelNodes;
             nextLevelNodes =0;
             currentLevel++;
-            currentIndex = 0;
         }
     }
 }
@@ -132,7 +129,8 @@
 
 -(CGRect)calculateGameFrameAtLevel:(NSUInteger)level index:(NSUInteger)index{
     //decreasing maximum number of levels to start from 0 not 1
-    //level = level -1;
+    assert(numberOfLevels >= level);
+    
     NSUInteger levelToDraw = numberOfLevels - level;
     
     NSUInteger game_number = index;

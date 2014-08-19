@@ -48,6 +48,7 @@
     [t addTeam:@"Eric/Meghan"];
     [t addTeam:@"Jack/Michelle"];
 
+// [t addTeam:@"Carmen/Michelle"];
 /*
     [t addTeam:@"Eric/Meghan"];
  
@@ -65,6 +66,9 @@
     
     [_scrollView addSubview:tv];
     [_scrollView setContentSize:CGSizeMake(1000, 1000)];
+    
+    
+    displayBracket([[t tournament]getTournamentRoot]);
     
     
 }
