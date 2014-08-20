@@ -77,15 +77,21 @@ void displayBracket(Game * root){
     NSMutableArray * games =[NSMutableArray new];
     NSMutableArray * queue= [NSMutableArray new];
     NSUInteger nodesInNextLevel = 0;
-    NSUInteger nodesInCurrentLevel = 0;
+    NSUInteger nodesInCurrentLevel = 1;
     
-    
+    NSUInteger currentLevel = 0;
     [queue addObject:root];
     
-    
+      NSMutableDictionary * md = [NSMutableDictionary new];
     while(queue.count>0){
         Game * g= queue.lastObject;
         NSLog(@"Game %@ ",g);
+        
+        NSMutableArray * ma = [md objectForKey:@(currentLevel)];
+        if(!ma){ma = [NSMutableArray new];}
+        [ma addObject:g];
+        [md setObject:ma forKey:@(currentLevel)];
+        
         
         [queue removeLastObject];
         nodesInCurrentLevel--;
@@ -108,9 +114,12 @@ void displayBracket(Game * root){
             NSLog(@"_______");
             nodesInCurrentLevel = nodesInNextLevel;
             nodesInNextLevel = 0;
+            currentLevel++;
             
         }
     }
+    
+    NSLog(@"%s %@",__PRETTY_FUNCTION__, md);
     
     
 }

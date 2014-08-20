@@ -65,7 +65,8 @@
     if (self) {
         // Initialization code
         //add games
-        [self addGames:[tournament getTournamentRoot]];
+      NSMutableDictionary * md =  [self addGames:[tournament getTournamentRoot]];
+        NSLog(@"%s %@ ",__PRETTY_FUNCTION__,md);
     }
     return self;
 }
@@ -82,16 +83,17 @@
  *
  *  @param root root of the tree
  */
--(void)addGames:(Game *)root{
+-(NSMutableDictionary *)addGames:(Game *)root{
     
-    if(!root) return;
+    if(!root) return nil;
     
     NSUInteger currentNodes=0;
     NSUInteger nextLevelNodes=0;
     NSUInteger currentLevel = 0;
-    
-
     NSMutableArray * nodes= [NSMutableArray new];
+    
+    NSMutableDictionary * md = [NSMutableDictionary new];
+    
     [nodes addObject:root]; //enqueue
     currentNodes++;
  
@@ -100,7 +102,11 @@
         Game * g = [nodes lastObject];
         //draw game at certain level
         [self drawGame:g atLevel:currentLevel index:g.displayIndex];
-
+        NSMutableArray * ma = [md objectForKey:@(currentLevel)];
+        if(!ma){ma = [NSMutableArray new];}
+        [ma addObject:g];
+        [md setObject:ma forKey:@(currentLevel)];
+        
         [nodes removeLastObject];
         currentNodes--;
 
@@ -112,11 +118,14 @@
         }
         
         if(currentNodes==0){
+            
             currentNodes = nextLevelNodes;
             nextLevelNodes =0;
             currentLevel++;
         }
     }
+    return md;
+    
 }
 
 /**
