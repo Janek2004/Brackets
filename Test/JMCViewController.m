@@ -68,7 +68,7 @@
     [_scrollView setContentSize:CGSizeMake(1000, 1000)];
     
     
-    displayBracket([[t tournament]getTournamentRoot]);
+   // displayBracket([[t tournament]getTournamentRoot]);
     
     
 }

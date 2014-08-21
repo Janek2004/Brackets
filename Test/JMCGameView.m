@@ -28,6 +28,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        NSLog(@"%f, %f, %f %f",CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+        
         // Initialization code
         //self.backgroundColor = [UIColor clearColor];
         self.team1Button = [UIButton buttonWithType:UIButtonTypeInfoLight];
