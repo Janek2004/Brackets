@@ -69,7 +69,7 @@
     //    displayBracket1([tournament getTournamentRoot]);
         
         
-        NSLog(@"%s %@ ",__PRETTY_FUNCTION__,md);
+      //  NSLog(@"%s %@ ",__PRETTY_FUNCTION__,md);
     }
     return self;
 }
@@ -199,50 +199,38 @@ void displayBracket1(Game * root){
     CGFloat game_height = MIN_GAME_HEIGHT;
     CGFloat margin = MARGIN;
     CGFloat space = MIN_GAME_SPACE;
-
+    CGFloat oldGameSpace = MIN_GAME_SPACE;
+    
     CGFloat gameY1= 0;
     CGFloat gameY2= 0;
     
-    gameY1 = margin;
-    gameY2 = margin + game_height + space;
-    
-    
-    
-    
-    //it calculates size and positioning depending on the function arguments, the challenge here is that we are reversing levels. It means that if we try to calculate position of the final game, we are passing level 0 but we need to display it at max nr levels times game_width
+    CGFloat oldGameY1= margin;
     CGFloat oldGameHeight = MIN_GAME_HEIGHT;
-    
+
+    gameY1 = margin;
+
+    //it calculates size and positioning depending on the function arguments, the challenge here is that we are reversing levels. It means that if we try to calculate position of the final game, we are passing level 0 but we need to display it at max nr levels times game_width
     
     for (int i =0; i<levelToDraw; i++) {
-        
-    //    gameY1 =  -13.5+ margin +game_height/2.0;
-    //    gameY2 =  11.5+ gameY2 +game_height/2.0;
-       
-            gameY1 =  margin +oldGameHeight/2.0;
-            gameY2 =  gameY2 +oldGameHeight/2.0;
-            
-            margin = gameY1;
-            
-            space = space + game_height;
-            oldGameHeight = game_height;
+            gameY1 =  margin + oldGameY1+ oldGameHeight/2.0;
+            gameY2 =  gameY1 +oldGameHeight + oldGameSpace;
+
+            space = oldGameSpace + oldGameHeight;
             game_height = gameY2 - gameY1;
+            oldGameHeight = game_height;
+        
+            oldGameSpace = space;
+            oldGameY1 = gameY1;
+       
+        
+        NSLog(@"\nY1 %f \nY2  %f \nM %f \nS %f \n GH  %f",gameY1, gameY2, margin, space, game_height);
     
     }
-    if(levelToDraw == numberOfLevels-1){
-       // gameY1 =  margin +oldGameHeight/2.0;
-        gameY2 =  gameY2 +game_height/2.0;
-        
-        margin = gameY1;
-        
-        space = space + game_height;
-        oldGameHeight = game_height;
-        game_height = gameY2 - gameY1;
-
-    }
-    gameY1 = margin + game_number* game_height + game_number*space;
+    
+    CGFloat gameY = gameY1 + game_number * game_height + game_number*space;
     //adjust game
-
-    CGRect frame = CGRectMake(levelToDraw * GAME_WIDTH, gameY1, GAME_WIDTH, game_height);
+#warning manual adjustment. Horrible practice.
+    CGRect frame = CGRectMake(levelToDraw * GAME_WIDTH, gameY, GAME_WIDTH, game_height+1.5);
     return frame;
 }
 

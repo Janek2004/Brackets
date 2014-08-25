@@ -10,6 +10,11 @@
 		82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A41993103300B245CF /* JMCTournamentView.m */; };
 		82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
 		82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
+		82CCD46019ABEC1E00667AD8 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD45F19ABEC1E00667AD8 /* Game.m */; };
+		82CCD46319ABEC2F00667AD8 /* SingleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46219ABEC2F00667AD8 /* SingleElimination.m */; };
+		82CCD46619ABEC3D00667AD8 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46519ABEC3D00667AD8 /* Team.m */; };
+		82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46819ABEC4B00667AD8 /* Stats.m */; };
+		82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */; };
 		82EA7D11198F36890044D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D10198F36890044D7AE /* Foundation.framework */; };
 		82EA7D13198F36890044D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D12198F36890044D7AE /* CoreGraphics.framework */; };
 		82EA7D15198F36890044D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D14198F36890044D7AE /* UIKit.framework */; };
@@ -28,18 +33,8 @@
 		82FD06A119930D4900B245CF /* gameButtonView.png in Resources */ = {isa = PBXBuildFile; fileRef = 82FD069F19930D4900B245CF /* gameButtonView.png */; };
 		82FD06A219930D4900B245CF /* gameButtonView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82FD06A019930D4900B245CF /* gameButtonView@2x.png */; };
 		82FD06A51993103300B245CF /* JMCTournamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A41993103300B245CF /* JMCTournamentView.m */; };
-		82FD06AC1993339D00B245CF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A71993339D00B245CF /* Game.m */; };
-		82FD06AD1993339D00B245CF /* SingleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A91993339D00B245CF /* SingleElimination.m */; };
-		82FD06AE1993339D00B245CF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06AB1993339D00B245CF /* Team.m */; };
-		82FD06B2199333E300B245CF /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06B1199333E300B245CF /* Stats.m */; };
-		82FD06B5199333FC00B245CF /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06B4199333FC00B245CF /* TournamentUtilities.m */; };
 		82FD06D31997B5D400B245CF /* Tournament.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06D21997B5D400B245CF /* Tournament.m */; };
 		82FD06D41997B5D400B245CF /* Tournament.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06D21997B5D400B245CF /* Tournament.m */; };
-		82FD06D51997B63600B245CF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A71993339D00B245CF /* Game.m */; };
-		82FD06D61997B63900B245CF /* SingleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A91993339D00B245CF /* SingleElimination.m */; };
-		82FD06D71997B63B00B245CF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06AB1993339D00B245CF /* Team.m */; };
-		82FD06D81997B63E00B245CF /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06B1199333E300B245CF /* Stats.m */; };
-		82FD06D91997B64000B245CF /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06B4199333FC00B245CF /* TournamentUtilities.m */; };
 		82FD06DC1997B68B00B245CF /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06DB1997B68B00B245CF /* Score.m */; };
 		82FD06DD1997B68B00B245CF /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06DB1997B68B00B245CF /* Score.m */; };
 /* End PBXBuildFile section */
@@ -58,23 +53,33 @@
 		820BB2B219A627F4006E9116 /* TournamentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentProtocol.h; sourceTree = "<group>"; };
 		82C679AD199F17E000B75C1F /* DoubleElimination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleElimination.h; sourceTree = "<group>"; };
 		82C679AE199F17E000B75C1F /* DoubleElimination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleElimination.m; sourceTree = "<group>"; };
-		82EA7D0D198F36890044D7AE /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82CCD45E19ABEC1E00667AD8 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		82CCD45F19ABEC1E00667AD8 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		82CCD46119ABEC2F00667AD8 /* SingleElimination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleElimination.h; sourceTree = "<group>"; };
+		82CCD46219ABEC2F00667AD8 /* SingleElimination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleElimination.m; sourceTree = "<group>"; };
+		82CCD46419ABEC3D00667AD8 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		82CCD46519ABEC3D00667AD8 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		82CCD46719ABEC4B00667AD8 /* Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.h; sourceTree = "<group>"; };
+		82CCD46819ABEC4B00667AD8 /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stats.m; sourceTree = "<group>"; };
+		82CCD46A19ABEC5800667AD8 /* TournamentUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentUtilities.h; sourceTree = "<group>"; };
+		82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TournamentUtilities.m; sourceTree = "<group>"; };
+		82EA7D0D198F36890044D7AE /* Brackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D10198F36890044D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82EA7D12198F36890044D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		82EA7D14198F36890044D7AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		82EA7D18198F36890044D7AE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		82EA7D18198F36890044D7AE /* Brackets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Brackets-Info.plist"; sourceTree = "<group>"; };
 		82EA7D1A198F36890044D7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82EA7D1C198F36890044D7AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		82EA7D1E198F36890044D7AE /* Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test-Prefix.pch"; sourceTree = "<group>"; };
+		82EA7D1E198F36890044D7AE /* Brackets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brackets-Prefix.pch"; sourceTree = "<group>"; };
 		82EA7D1F198F36890044D7AE /* JMCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCAppDelegate.h; sourceTree = "<group>"; };
 		82EA7D20198F36890044D7AE /* JMCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCAppDelegate.m; sourceTree = "<group>"; };
 		82EA7D23198F36890044D7AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82EA7D25198F36890044D7AE /* JMCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCViewController.h; sourceTree = "<group>"; };
 		82EA7D26198F36890044D7AE /* JMCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCViewController.m; sourceTree = "<group>"; };
 		82EA7D28198F36890044D7AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		82EA7D2E198F36890044D7AE /* TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EA7D2E198F36890044D7AE /* BracketsBracketss.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BracketsBracketss.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D2F198F36890044D7AE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		82EA7D37198F36890044D7AE /* TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestTests-Info.plist"; sourceTree = "<group>"; };
+		82EA7D37198F36890044D7AE /* BracketsBracketss-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BracketsBracketss-Info.plist"; sourceTree = "<group>"; };
 		82EA7D39198F36890044D7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82EA7D3B198F36890044D7AE /* TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTests.m; sourceTree = "<group>"; };
 		82EA7D47198F42EF0044D7AE /* JMCGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCGameView.h; sourceTree = "<group>"; };
@@ -83,16 +88,6 @@
 		82FD06A019930D4900B245CF /* gameButtonView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameButtonView@2x.png"; sourceTree = "<group>"; };
 		82FD06A31993103300B245CF /* JMCTournamentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCTournamentView.h; sourceTree = "<group>"; };
 		82FD06A41993103300B245CF /* JMCTournamentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCTournamentView.m; sourceTree = "<group>"; };
-		82FD06A61993339D00B245CF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Game.h; sourceTree = "<group>"; };
-		82FD06A71993339D00B245CF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Game.m; sourceTree = "<group>"; };
-		82FD06A81993339D00B245CF /* SingleElimination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleElimination.h; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/SingleElimination.h; sourceTree = "<group>"; };
-		82FD06A91993339D00B245CF /* SingleElimination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleElimination.m; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/SingleElimination.m; sourceTree = "<group>"; };
-		82FD06AA1993339D00B245CF /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Team.h; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Team.h; sourceTree = "<group>"; };
-		82FD06AB1993339D00B245CF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Team.m; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Team.m; sourceTree = "<group>"; };
-		82FD06B0199333E300B245CF /* Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stats.h; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Stats.h; sourceTree = "<group>"; };
-		82FD06B1199333E300B245CF /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stats.m; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/Stats.m; sourceTree = "<group>"; };
-		82FD06B3199333FC00B245CF /* TournamentUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TournamentUtilities.h; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/TournamentUtilities.h; sourceTree = "<group>"; };
-		82FD06B4199333FC00B245CF /* TournamentUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TournamentUtilities.m; path = ../../NewRepositories/BracketsCommandLine/BracketsCommandLineOS/BracketsCommandLineOS/TournamentUtilities.m; sourceTree = "<group>"; };
 		82FD06D11997B5D400B245CF /* Tournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tournament.h; sourceTree = "<group>"; };
 		82FD06D21997B5D400B245CF /* Tournament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tournament.m; sourceTree = "<group>"; };
 		82FD06DA1997B68B00B245CF /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
@@ -126,8 +121,8 @@
 		82EA7D04198F36890044D7AE = {
 			isa = PBXGroup;
 			children = (
-				82EA7D16198F36890044D7AE /* Test */,
-				82EA7D35198F36890044D7AE /* TestTests */,
+				82EA7D16198F36890044D7AE /* Brackets */,
+				82EA7D35198F36890044D7AE /* BracketsTests */,
 				82EA7D0F198F36890044D7AE /* Frameworks */,
 				82EA7D0E198F36890044D7AE /* Products */,
 			);
@@ -136,8 +131,8 @@
 		82EA7D0E198F36890044D7AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82EA7D0D198F36890044D7AE /* Test.app */,
-				82EA7D2E198F36890044D7AE /* TestTests.xctest */,
+				82EA7D0D198F36890044D7AE /* Brackets.app */,
+				82EA7D2E198F36890044D7AE /* BracketsBracketss.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,7 +148,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		82EA7D16198F36890044D7AE /* Test */ = {
+		82EA7D16198F36890044D7AE /* Brackets */ = {
 			isa = PBXGroup;
 			children = (
 				82EA7D1F198F36890044D7AE /* JMCAppDelegate.h */,
@@ -171,33 +166,35 @@
 				82EA7D28198F36890044D7AE /* Images.xcassets */,
 				82EA7D17198F36890044D7AE /* Supporting Files */,
 			);
+			name = Brackets;
 			path = Test;
 			sourceTree = "<group>";
 		};
 		82EA7D17198F36890044D7AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82EA7D18198F36890044D7AE /* Test-Info.plist */,
+				82EA7D18198F36890044D7AE /* Brackets-Info.plist */,
 				82EA7D19198F36890044D7AE /* InfoPlist.strings */,
 				82EA7D1C198F36890044D7AE /* main.m */,
-				82EA7D1E198F36890044D7AE /* Test-Prefix.pch */,
+				82EA7D1E198F36890044D7AE /* Brackets-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		82EA7D35198F36890044D7AE /* TestTests */ = {
+		82EA7D35198F36890044D7AE /* BracketsTests */ = {
 			isa = PBXGroup;
 			children = (
 				82EA7D3B198F36890044D7AE /* TestTests.m */,
 				82EA7D36198F36890044D7AE /* Supporting Files */,
 			);
+			name = BracketsTests;
 			path = TestTests;
 			sourceTree = "<group>";
 		};
 		82EA7D36198F36890044D7AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82EA7D37198F36890044D7AE /* TestTests-Info.plist */,
+				82EA7D37198F36890044D7AE /* BracketsBracketss-Info.plist */,
 				82EA7D38198F36890044D7AE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -208,19 +205,19 @@
 			children = (
 				82FD06D11997B5D400B245CF /* Tournament.h */,
 				82FD06D21997B5D400B245CF /* Tournament.m */,
-				82FD06A61993339D00B245CF /* Game.h */,
-				82FD06A71993339D00B245CF /* Game.m */,
+				82CCD45E19ABEC1E00667AD8 /* Game.h */,
+				82CCD45F19ABEC1E00667AD8 /* Game.m */,
 				820BB2B219A627F4006E9116 /* TournamentProtocol.h */,
-				82FD06A81993339D00B245CF /* SingleElimination.h */,
-				82FD06A91993339D00B245CF /* SingleElimination.m */,
+				82CCD46119ABEC2F00667AD8 /* SingleElimination.h */,
+				82CCD46219ABEC2F00667AD8 /* SingleElimination.m */,
 				82C679AD199F17E000B75C1F /* DoubleElimination.h */,
 				82C679AE199F17E000B75C1F /* DoubleElimination.m */,
-				82FD06AA1993339D00B245CF /* Team.h */,
-				82FD06AB1993339D00B245CF /* Team.m */,
-				82FD06B0199333E300B245CF /* Stats.h */,
-				82FD06B1199333E300B245CF /* Stats.m */,
-				82FD06B3199333FC00B245CF /* TournamentUtilities.h */,
-				82FD06B4199333FC00B245CF /* TournamentUtilities.m */,
+				82CCD46419ABEC3D00667AD8 /* Team.h */,
+				82CCD46519ABEC3D00667AD8 /* Team.m */,
+				82CCD46719ABEC4B00667AD8 /* Stats.h */,
+				82CCD46819ABEC4B00667AD8 /* Stats.m */,
+				82CCD46A19ABEC5800667AD8 /* TournamentUtilities.h */,
+				82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */,
 				82FD06DA1997B68B00B245CF /* Score.h */,
 				82FD06DB1997B68B00B245CF /* Score.m */,
 			);
@@ -230,9 +227,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		82EA7D0C198F36890044D7AE /* Test */ = {
+		82EA7D0C198F36890044D7AE /* Brackets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82EA7D3F198F36890044D7AE /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = 82EA7D3F198F36890044D7AE /* Build configuration list for PBXNativeTarget "Brackets" */;
 			buildPhases = (
 				82EA7D09198F36890044D7AE /* Sources */,
 				82EA7D0A198F36890044D7AE /* Frameworks */,
@@ -242,14 +239,14 @@
 			);
 			dependencies = (
 			);
-			name = Test;
+			name = Brackets;
 			productName = Test;
-			productReference = 82EA7D0D198F36890044D7AE /* Test.app */;
+			productReference = 82EA7D0D198F36890044D7AE /* Brackets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		82EA7D2D198F36890044D7AE /* TestTests */ = {
+		82EA7D2D198F36890044D7AE /* BracketsBracketss */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82EA7D42198F36890044D7AE /* Build configuration list for PBXNativeTarget "TestTests" */;
+			buildConfigurationList = 82EA7D42198F36890044D7AE /* Build configuration list for PBXNativeTarget "BracketsBracketss" */;
 			buildPhases = (
 				82EA7D2A198F36890044D7AE /* Sources */,
 				82EA7D2B198F36890044D7AE /* Frameworks */,
@@ -260,9 +257,9 @@
 			dependencies = (
 				82EA7D34198F36890044D7AE /* PBXTargetDependency */,
 			);
-			name = TestTests;
+			name = BracketsBracketss;
 			productName = TestTests;
-			productReference = 82EA7D2E198F36890044D7AE /* TestTests.xctest */;
+			productReference = 82EA7D2E198F36890044D7AE /* BracketsBracketss.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +277,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 82EA7D08198F36890044D7AE /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = 82EA7D08198F36890044D7AE /* Build configuration list for PBXProject "Brackets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -293,8 +290,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82EA7D0C198F36890044D7AE /* Test */,
-				82EA7D2D198F36890044D7AE /* TestTests */,
+				82EA7D0C198F36890044D7AE /* Brackets */,
+				82EA7D2D198F36890044D7AE /* BracketsBracketss */,
 			);
 		};
 /* End PBXProject section */
@@ -327,18 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82FD06B2199333E300B245CF /* Stats.m in Sources */,
-				82FD06AE1993339D00B245CF /* Team.m in Sources */,
+				82CCD46319ABEC2F00667AD8 /* SingleElimination.m in Sources */,
 				82EA7D1D198F36890044D7AE /* main.m in Sources */,
-				82FD06AD1993339D00B245CF /* SingleElimination.m in Sources */,
 				82FD06A51993103300B245CF /* JMCTournamentView.m in Sources */,
+				82CCD46019ABEC1E00667AD8 /* Game.m in Sources */,
 				82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */,
 				82EA7D21198F36890044D7AE /* JMCAppDelegate.m in Sources */,
 				82FD06DC1997B68B00B245CF /* Score.m in Sources */,
-				82FD06AC1993339D00B245CF /* Game.m in Sources */,
-				82FD06B5199333FC00B245CF /* TournamentUtilities.m in Sources */,
 				82FD06D31997B5D400B245CF /* Tournament.m in Sources */,
 				82EA7D27198F36890044D7AE /* JMCViewController.m in Sources */,
+				82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */,
+				82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */,
+				82CCD46619ABEC3D00667AD8 /* Team.m in Sources */,
 				82EA7D49198F42EF0044D7AE /* JMCGameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,12 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82FD06D71997B63B00B245CF /* Team.m in Sources */,
 				82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */,
-				82FD06D51997B63600B245CF /* Game.m in Sources */,
-				82FD06D61997B63900B245CF /* SingleElimination.m in Sources */,
-				82FD06D81997B63E00B245CF /* Stats.m in Sources */,
-				82FD06D91997B64000B245CF /* TournamentUtilities.m in Sources */,
 				82FD06D41997B5D400B245CF /* Tournament.m in Sources */,
 				82FD06DD1997B68B00B245CF /* Score.m in Sources */,
 				82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */,
@@ -365,7 +357,7 @@
 /* Begin PBXTargetDependency section */
 		82EA7D34198F36890044D7AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 82EA7D0C198F36890044D7AE /* Test */;
+			target = 82EA7D0C198F36890044D7AE /* Brackets */;
 			targetProxy = 82EA7D33198F36890044D7AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -474,9 +466,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Test/Test-Prefix.pch";
-				INFOPLIST_FILE = "Test/Test-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Test/Brackets-Prefix.pch";
+				INFOPLIST_FILE = "Test/Brackets-Info.plist";
+				PRODUCT_NAME = Brackets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -487,9 +479,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Test/Test-Prefix.pch";
-				INFOPLIST_FILE = "Test/Test-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Test/Brackets-Prefix.pch";
+				INFOPLIST_FILE = "Test/Brackets-Info.plist";
+				PRODUCT_NAME = Brackets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -509,8 +501,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "TestTests/TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TestTests/BracketsBracketss-Info.plist";
+				PRODUCT_NAME = BracketsBracketss;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -527,8 +519,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Test/Test-Prefix.pch";
-				INFOPLIST_FILE = "TestTests/TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TestTests/BracketsBracketss-Info.plist";
+				PRODUCT_NAME = BracketsBracketss;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -537,7 +529,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		82EA7D08198F36890044D7AE /* Build configuration list for PBXProject "Test" */ = {
+		82EA7D08198F36890044D7AE /* Build configuration list for PBXProject "Brackets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82EA7D3D198F36890044D7AE /* Debug */,
@@ -546,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82EA7D3F198F36890044D7AE /* Build configuration list for PBXNativeTarget "Test" */ = {
+		82EA7D3F198F36890044D7AE /* Build configuration list for PBXNativeTarget "Brackets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82EA7D40198F36890044D7AE /* Debug */,
@@ -555,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82EA7D42198F36890044D7AE /* Build configuration list for PBXNativeTarget "TestTests" */ = {
+		82EA7D42198F36890044D7AE /* Build configuration list for PBXNativeTarget "BracketsBracketss" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82EA7D43198F36890044D7AE /* Debug */,

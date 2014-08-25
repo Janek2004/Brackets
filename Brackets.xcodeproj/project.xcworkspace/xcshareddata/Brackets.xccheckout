@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D17ADC2-C8DF-4498-9E27-A4D8833B6823</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Brackets</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6286278B-8E21-4DF5-B0F4-CE1048D48984</key>
+		<string>https://github.com/Janek2004/BracketsCommandLine.git</string>
+		<key>C32AB418-0CE4-4DF2-909C-5592F40C9029</key>
+		<string>https://github.com/Janek2004/Brackets.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Brackets.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6286278B-8E21-4DF5-B0F4-CE1048D48984</key>
+		<string>../../../NewRepositories/BracketsCommandLine</string>
+		<key>C32AB418-0CE4-4DF2-909C-5592F40C9029</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Janek2004/Brackets.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C32AB418-0CE4-4DF2-909C-5592F40C9029</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C32AB418-0CE4-4DF2-909C-5592F40C9029</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Brackets</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6286278B-8E21-4DF5-B0F4-CE1048D48984</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BracketsCommandLine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -32,7 +32,7 @@
         NSLog(@"%f, %f, %f %f",CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
         
         // Initialization code
-        //self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
         self.team1Button = [UIButton buttonWithType:UIButtonTypeInfoLight];
         self.team2Button = [UIButton buttonWithType:UIButtonTypeInfoLight];
         self.gameButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -40,14 +40,16 @@
         [self.team1Button addTarget:self action:@selector(showTeamInfo:) forControlEvents:UIControlEventTouchUpInside];
         [self.team2Button addTarget:self action:@selector(showTeamInfo:) forControlEvents:UIControlEventTouchUpInside];
         [self.gameButton addTarget:self action:@selector(showGameInfo:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.team1Button];
-        [self addSubview:self.team2Button];
+        if(self.game.left!=NULL || self.game.team1!=NULL){
+            [self addSubview:self.team1Button];
+        }
+        if(self.game.right!=NULL || self.game.team2!=NULL){
+            [self addSubview:self.team2Button];
+        }
+
         [self addSubview:self.gameButton];
-        
         UIImage * img = [self drawCanvas4];
-        
         [self.gameButton setImage:img forState:UIControlStateNormal];
-        
         
     }
     return self;
@@ -69,8 +71,9 @@
 
 
 -(id)initWithGame:(id)game andFrame:(CGRect)frame{
-    self = [self initWithFrame:frame];
     self.game = game;
+    self = [self initWithFrame:frame];
+   
     if (self) {
         
         
@@ -84,7 +87,12 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [self drawCanvas1WithTeam1Name:[self.game.team1 name] team2Name:[self.game.team2 name] gameNumber:[NSString stringWithFormat:@"%@",self.game.number]     height:CGRectGetHeight(self.frame)-25 horizontal_topy:25 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:0];
+    NSString * teamName1  = [self.game.team1 name]!=NULL?[self.game.team1 name]:self.game.defaultTeam1Text;
+    NSString * teamName2  = [self.game.team2 name]!=NULL?[self.game.team2 name]:self.game.defaultTeam2Text;
+    
+
+    
+    [self drawCanvas1WithTeam1Name:teamName1 team2Name:teamName2 gameNumber:[NSString stringWithFormat:@"%@",self.game.number]     height:CGRectGetHeight(self.frame)-25 horizontal_topy:25 team2LabelHeight:16 team2BackgroundHeight:28 team_font_size:9 left_boundary:0];
     
     
     
@@ -103,7 +111,6 @@
     
 }
 
-
 - (void)drawCanvas1WithTeam1Name: (NSString*)team1Name team2Name: (NSString*)team2Name gameNumber: (NSString*)gameNumber height: (CGFloat)height horizontal_topy: (CGFloat)horizontal_topy team2LabelHeight: (CGFloat)team2LabelHeight team2BackgroundHeight: (CGFloat)team2BackgroundHeight team_font_size: (CGFloat)team_font_size left_boundary: (CGFloat)left_boundary;
 {
     //// General Declarations
@@ -116,7 +123,7 @@
     
     //// Variable Declarations
     CGFloat horizontal_expression = horizontal_topy + height;
-    CGFloat gameNumberExpression = horizontal_topy + height / 2.0 - 12;
+    CGFloat gameNumberExpression = horizontal_topy + height / 2.0 - 13;
     CGFloat horizontalCenterExpression = horizontal_topy + height / 2.0;
     CGFloat team1TextExpression = horizontal_topy + 1 - 20.0 / 2.0;
     CGFloat team2LabelExpression = horizontal_topy + height - team2LabelHeight / 2.0;
@@ -127,29 +134,31 @@
     CGFloat left_vertical_line_expression = left_boundary + 133;
     
     //// vertical_center Drawing
-    UIBezierPath* vertical_centerPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, (horizontalCenterExpression - 13), 30, 2)];
+    UIBezierPath* vertical_centerPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, (horizontalCenterExpression - 12.5), 30, 2)];
     [color2 setFill];
     [vertical_centerPath fill];
     
     
     //// horizontal_top Drawing
-    UIBezierPath* horizontal_topPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, (horizontal_topy - 12), 135, 2)];
+    UIBezierPath* horizontal_topPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary,0, 135, 2)];
     [color2 setFill];
     [horizontal_topPath fill];
     
     
     //// horizontal_bottom Drawing
-    UIBezierPath* horizontal_bottomPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, (horizontal_expression - 12), 135, 2)];
+    UIBezierPath* horizontal_bottomPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_boundary, horizontal_expression-1 , 135, 2)];
     [color2 setFill];
     [horizontal_bottomPath fill];
     
     
     //// vertical Drawing
-    UIBezierPath* verticalPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, (horizontal_topy - 12), 2, height)];
+    UIBezierPath* verticalPath = [UIBezierPath bezierPathWithRect: CGRectMake(left_vertical_line_expression, 0, 2, height + 25)];
     [color2 setFill];
     [verticalPath fill];
     
     
+    
+    if(self.game.left!=NULL || self.game.team1!=NULL){
     //// team1Background Drawing
     UIBezierPath* team1BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, 1, 100, 28) cornerRadius: 2];
     [color setFill];
@@ -166,10 +175,14 @@
     
     NSDictionary* team1LabelFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: team_font_size], NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: team1LabelStyle};
     
+
+        
+        
     [team1Name drawInRect: CGRectOffset(team1LabelRect, 0, (CGRectGetHeight(team1LabelRect) - [team1Name boundingRectWithSize: team1LabelRect.size options: NSStringDrawingUsesLineFragmentOrigin attributes: team1LabelFontAttributes context: nil].size.height) / 2) withAttributes: team1LabelFontAttributes];
+    }
     
-    
-    //// team2Background Drawing
+    if(self.game.right!=NULL || self.game.team2!=NULL)
+    {//// team2Background Drawing
     UIBezierPath* team2BackgroundPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(left_team_background_expression, (team2BackgroundExpression - 11.5), 100, 28) cornerRadius: 2];
     [color setFill];
     [team2BackgroundPath fill];
@@ -187,7 +200,7 @@
     
     [team2Name drawInRect: CGRectOffset(team2LabelRect, 0, (CGRectGetHeight(team2LabelRect) - [team2Name boundingRectWithSize: team2LabelRect.size options: NSStringDrawingUsesLineFragmentOrigin attributes: team2LabelFontAttributes context: nil].size.height) / 2) withAttributes: team2LabelFontAttributes];
     
-    
+    }
     //// Group
     {
         CGContextSaveGState(context);
