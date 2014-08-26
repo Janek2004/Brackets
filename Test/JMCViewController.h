@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Score;
 @interface JMCViewController : UIViewController
+
 
 @end

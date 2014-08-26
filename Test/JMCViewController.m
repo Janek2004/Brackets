@@ -13,7 +13,7 @@
 #import "Game.h"
 
 @interface JMCViewController ()
-@property(nonatomic,strong) UIScrollView * scrollView;
+    @property(nonatomic,strong) UIScrollView * scrollView;
 @end
 
 @implementation JMCViewController

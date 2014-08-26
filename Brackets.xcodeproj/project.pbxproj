@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F5D067219ACD74C006B8850 /* yes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F5D067119ACD74C006B8850 /* yes.jpg */; };
+		4F5D067519ACF540006B8850 /* JMCScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */; };
+		4F5D067619ACF540006B8850 /* JMCScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */; };
+		4F5D067A19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067919AD299D006B8850 /* JMCTextFieldDismissal.m */; };
+		4F5D067B19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067919AD299D006B8850 /* JMCTextFieldDismissal.m */; };
 		82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD06A41993103300B245CF /* JMCTournamentView.m */; };
 		82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
 		82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C679AE199F17E000B75C1F /* DoubleElimination.m */; };
@@ -15,8 +20,6 @@
 		82CCD46619ABEC3D00667AD8 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46519ABEC3D00667AD8 /* Team.m */; };
 		82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46819ABEC4B00667AD8 /* Stats.m */; };
 		82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */; };
-		82CCD47019AC1FA800667AD8 /* JMCScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */; };
-		82CCD47119AC1FA800667AD8 /* JMCScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */; };
 		82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
 		82CCD47419AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
 		82EA7D11198F36890044D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D10198F36890044D7AE /* Foundation.framework */; };
@@ -54,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F5D067119ACD74C006B8850 /* yes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yes.jpg; sourceTree = "<group>"; };
+		4F5D067319ACF540006B8850 /* JMCScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCScoreTableViewController.h; path = ViewControllers/JMCScoreTableViewController.h; sourceTree = "<group>"; };
+		4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMCScoreTableViewController.m; path = ViewControllers/JMCScoreTableViewController.m; sourceTree = "<group>"; };
+		4F5D067819AD299D006B8850 /* JMCTextFieldDismissal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCTextFieldDismissal.h; path = Test/JMCTextFieldDismissal.h; sourceTree = "<group>"; };
+		4F5D067919AD299D006B8850 /* JMCTextFieldDismissal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMCTextFieldDismissal.m; path = Test/JMCTextFieldDismissal.m; sourceTree = "<group>"; };
 		820BB2B219A627F4006E9116 /* TournamentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentProtocol.h; sourceTree = "<group>"; };
 		82C679AD199F17E000B75C1F /* DoubleElimination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleElimination.h; sourceTree = "<group>"; };
 		82C679AE199F17E000B75C1F /* DoubleElimination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleElimination.m; sourceTree = "<group>"; };
@@ -67,8 +75,6 @@
 		82CCD46819ABEC4B00667AD8 /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stats.m; sourceTree = "<group>"; };
 		82CCD46A19ABEC5800667AD8 /* TournamentUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentUtilities.h; sourceTree = "<group>"; };
 		82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TournamentUtilities.m; sourceTree = "<group>"; };
-		82CCD46E19AC1FA800667AD8 /* JMCScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCScoreViewController.h; path = ViewController/JMCScoreViewController.h; sourceTree = "<group>"; };
-		82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMCScoreViewController.m; path = ViewController/JMCScoreViewController.m; sourceTree = "<group>"; };
 		82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMCScoreViewController.xib; sourceTree = "<group>"; };
 		82EA7D0D198F36890044D7AE /* Brackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D10198F36890044D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +131,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F5D067719ACF552006B8850 /* ScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F5D067319ACF540006B8850 /* JMCScoreTableViewController.h */,
+				4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */,
+				82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */,
+			);
+			name = ScoreViewController;
+			sourceTree = "<group>";
+		};
 		82CCD46D19AC1E3F00667AD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +148,6 @@
 				82EA7D48198F42EF0044D7AE /* JMCGameView.m */,
 				82FD06A31993103300B245CF /* JMCTournamentView.h */,
 				82FD06A41993103300B245CF /* JMCTournamentView.m */,
-				82CCD46E19AC1FA800667AD8 /* JMCScoreViewController.h */,
-				82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */,
-				82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -142,6 +155,8 @@
 		82EA7D04198F36890044D7AE = {
 			isa = PBXGroup;
 			children = (
+				4F5D067819AD299D006B8850 /* JMCTextFieldDismissal.h */,
+				4F5D067919AD299D006B8850 /* JMCTextFieldDismissal.m */,
 				82EA7D16198F36890044D7AE /* Brackets */,
 				82EA7D35198F36890044D7AE /* BracketsTests */,
 				82EA7D0F198F36890044D7AE /* Frameworks */,
@@ -175,8 +190,10 @@
 				82EA7D1F198F36890044D7AE /* JMCAppDelegate.h */,
 				82EA7D20198F36890044D7AE /* JMCAppDelegate.m */,
 				82EA7D22198F36890044D7AE /* Main.storyboard */,
+				4F5D067119ACD74C006B8850 /* yes.jpg */,
 				82EA7D25198F36890044D7AE /* JMCViewController.h */,
 				82EA7D26198F36890044D7AE /* JMCViewController.m */,
+				4F5D067719ACF552006B8850 /* ScoreViewController */,
 				82CCD46D19AC1E3F00667AD8 /* Views */,
 				82FD06AF199333AA00B245CF /* Logic */,
 				82FD069F19930D4900B245CF /* gameButtonView.png */,
@@ -322,6 +339,7 @@
 				82EA7D29198F36890044D7AE /* Images.xcassets in Resources */,
 				82EA7D1B198F36890044D7AE /* InfoPlist.strings in Resources */,
 				82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */,
+				4F5D067219ACD74C006B8850 /* yes.jpg in Resources */,
 				82FD06A119930D4900B245CF /* gameButtonView.png in Resources */,
 				82FD06A219930D4900B245CF /* gameButtonView@2x.png in Resources */,
 				82EA7D24198F36890044D7AE /* Main.storyboard in Resources */,
@@ -349,12 +367,13 @@
 				82FD06A51993103300B245CF /* JMCTournamentView.m in Sources */,
 				82CCD46019ABEC1E00667AD8 /* Game.m in Sources */,
 				82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */,
+				4F5D067519ACF540006B8850 /* JMCScoreTableViewController.m in Sources */,
 				82EA7D21198F36890044D7AE /* JMCAppDelegate.m in Sources */,
 				82FD06DC1997B68B00B245CF /* Score.m in Sources */,
 				82FD06D31997B5D400B245CF /* Tournament.m in Sources */,
 				82EA7D27198F36890044D7AE /* JMCViewController.m in Sources */,
 				82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */,
-				82CCD47019AC1FA800667AD8 /* JMCScoreViewController.m in Sources */,
+				4F5D067A19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */,
 				82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */,
 				82CCD46619ABEC3D00667AD8 /* Team.m in Sources */,
 				82EA7D49198F42EF0044D7AE /* JMCGameView.m in Sources */,
@@ -365,11 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5D067B19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */,
 				82C679AC199EF0E400B75C1F /* JMCTournamentView.m in Sources */,
+				4F5D067619ACF540006B8850 /* JMCScoreTableViewController.m in Sources */,
 				82FD06D41997B5D400B245CF /* Tournament.m in Sources */,
 				82FD06DD1997B68B00B245CF /* Score.m in Sources */,
 				82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */,
-				82CCD47119AC1FA800667AD8 /* JMCScoreViewController.m in Sources */,
 				82EA7D3C198F36890044D7AE /* TestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
