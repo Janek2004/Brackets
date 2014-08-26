@@ -15,6 +15,10 @@
 		82CCD46619ABEC3D00667AD8 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46519ABEC3D00667AD8 /* Team.m */; };
 		82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46819ABEC4B00667AD8 /* Stats.m */; };
 		82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */; };
+		82CCD47019AC1FA800667AD8 /* JMCScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */; };
+		82CCD47119AC1FA800667AD8 /* JMCScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */; };
+		82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
+		82CCD47419AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
 		82EA7D11198F36890044D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D10198F36890044D7AE /* Foundation.framework */; };
 		82EA7D13198F36890044D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D12198F36890044D7AE /* CoreGraphics.framework */; };
 		82EA7D15198F36890044D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D14198F36890044D7AE /* UIKit.framework */; };
@@ -63,6 +67,9 @@
 		82CCD46819ABEC4B00667AD8 /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stats.m; sourceTree = "<group>"; };
 		82CCD46A19ABEC5800667AD8 /* TournamentUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentUtilities.h; sourceTree = "<group>"; };
 		82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TournamentUtilities.m; sourceTree = "<group>"; };
+		82CCD46E19AC1FA800667AD8 /* JMCScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCScoreViewController.h; path = ViewController/JMCScoreViewController.h; sourceTree = "<group>"; };
+		82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMCScoreViewController.m; path = ViewController/JMCScoreViewController.m; sourceTree = "<group>"; };
+		82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMCScoreViewController.xib; sourceTree = "<group>"; };
 		82EA7D0D198F36890044D7AE /* Brackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D10198F36890044D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82EA7D12198F36890044D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +125,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82CCD46D19AC1E3F00667AD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82EA7D47198F42EF0044D7AE /* JMCGameView.h */,
+				82EA7D48198F42EF0044D7AE /* JMCGameView.m */,
+				82FD06A31993103300B245CF /* JMCTournamentView.h */,
+				82FD06A41993103300B245CF /* JMCTournamentView.m */,
+				82CCD46E19AC1FA800667AD8 /* JMCScoreViewController.h */,
+				82CCD46F19AC1FA800667AD8 /* JMCScoreViewController.m */,
+				82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		82EA7D04198F36890044D7AE = {
 			isa = PBXGroup;
 			children = (
@@ -156,10 +177,7 @@
 				82EA7D22198F36890044D7AE /* Main.storyboard */,
 				82EA7D25198F36890044D7AE /* JMCViewController.h */,
 				82EA7D26198F36890044D7AE /* JMCViewController.m */,
-				82EA7D47198F42EF0044D7AE /* JMCGameView.h */,
-				82EA7D48198F42EF0044D7AE /* JMCGameView.m */,
-				82FD06A31993103300B245CF /* JMCTournamentView.h */,
-				82FD06A41993103300B245CF /* JMCTournamentView.m */,
+				82CCD46D19AC1E3F00667AD8 /* Views */,
 				82FD06AF199333AA00B245CF /* Logic */,
 				82FD069F19930D4900B245CF /* gameButtonView.png */,
 				82FD06A019930D4900B245CF /* gameButtonView@2x.png */,
@@ -303,6 +321,7 @@
 			files = (
 				82EA7D29198F36890044D7AE /* Images.xcassets in Resources */,
 				82EA7D1B198F36890044D7AE /* InfoPlist.strings in Resources */,
+				82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */,
 				82FD06A119930D4900B245CF /* gameButtonView.png in Resources */,
 				82FD06A219930D4900B245CF /* gameButtonView@2x.png in Resources */,
 				82EA7D24198F36890044D7AE /* Main.storyboard in Resources */,
@@ -313,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CCD47419AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */,
 				82EA7D3A198F36890044D7AE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +354,7 @@
 				82FD06D31997B5D400B245CF /* Tournament.m in Sources */,
 				82EA7D27198F36890044D7AE /* JMCViewController.m in Sources */,
 				82CCD46919ABEC4B00667AD8 /* Stats.m in Sources */,
+				82CCD47019AC1FA800667AD8 /* JMCScoreViewController.m in Sources */,
 				82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */,
 				82CCD46619ABEC3D00667AD8 /* Team.m in Sources */,
 				82EA7D49198F42EF0044D7AE /* JMCGameView.m in Sources */,
@@ -348,6 +369,7 @@
 				82FD06D41997B5D400B245CF /* Tournament.m in Sources */,
 				82FD06DD1997B68B00B245CF /* Score.m in Sources */,
 				82C679B0199F17E000B75C1F /* DoubleElimination.m in Sources */,
+				82CCD47119AC1FA800667AD8 /* JMCScoreViewController.m in Sources */,
 				82EA7D3C198F36890044D7AE /* TestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

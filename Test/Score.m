@@ -36,7 +36,7 @@
 
 }
 
--(void)setScore:(id)score1 andScore:(id)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;{
+-(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;{
     
      NSMutableDictionary * dict = [NSMutableDictionary new];
      [dict setObject:score1 forKey:SCORE1_KEY];

@@ -11,8 +11,16 @@
 @interface Score : NSObject
 @property(nonatomic,strong) NSMutableArray * sets;
 
-
--(void)setScore:(id)score1 andScore:(id)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;
+/**
+ *  Setting up a score. It adds a set to a dictionary with sets
+ *
+ *  @param score1 <#score1 description#>
+ *  @param score2 <#score2 description#>
+ *  @param team1  <#team1 description#>
+ *  @param team2  <#team2 description#>
+ *  @param final  <#final description#>
+ */
+-(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;
 
 -(void)deleteScoreAtIndex:(NSUInteger)index;
 -(id)getWinner;
