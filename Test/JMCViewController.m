@@ -14,9 +14,34 @@
 
 @interface JMCViewController ()
     @property(nonatomic,strong) UIScrollView * scrollView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+
 @end
 
 @implementation JMCViewController
+
+
+- (IBAction)segmentedControlValueChanged:(id)sender {
+    NSUInteger teamNr =  [sender selectedSegmentIndex];
+    Tournament * t = [[Tournament alloc]init];
+    for(int i =0; i<teamNr;i++){
+          [t addTeam:[NSString stringWithFormat:@"J %d",arc4random()%10000]];
+    
+    }
+    [t setFormat:kSingleElimination];
+    
+    JMCTournamentView * tv = [[JMCTournamentView alloc]initWithTournament:t.tournament];
+    tv.backgroundColor = [UIColor blackColor];
+    
+    _scrollView.backgroundColor = [UIColor orangeColor];
+    [_scrollView addSubview:tv];
+    [_scrollView setContentSize:CGSizeMake(1000, 1000)];
+    //[self.view bringSubviewToFront:_scrollView];
+    
+    
+    
+}
 
 - (void)viewDidLoad
 {
@@ -26,11 +51,11 @@
   // [self.view addSubview:gv];
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     [self.view addSubview:_scrollView];
-
     self.view.layer.borderWidth =1;
     
+    [self.view bringSubviewToFront:self.segmentedControl];
     
-    [self addTournament];
+ //   [self addTournament];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +93,6 @@
     [_scrollView setContentSize:CGSizeMake(1000, 1000)];
     
     
-   // displayBracket([[t tournament]getTournamentRoot]);
     
     
 }

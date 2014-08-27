@@ -47,6 +47,9 @@
     }
 }
 
+-(void)dealloc{
+    if(timer.isValid) [timer invalidate];
+}
 
 
 @end
