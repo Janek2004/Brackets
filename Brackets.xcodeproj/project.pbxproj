@@ -21,6 +21,8 @@
 		82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */; };
 		82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
 		82CCD47419AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */; };
+		82CCD47719AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD47619AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.m */; };
+		82CCD47A19AD6F9600667AD8 /* ScoreEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CCD47919AD6F9600667AD8 /* ScoreEditTableViewCell.m */; };
 		82EA7D11198F36890044D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D10198F36890044D7AE /* Foundation.framework */; };
 		82EA7D13198F36890044D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D12198F36890044D7AE /* CoreGraphics.framework */; };
 		82EA7D15198F36890044D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EA7D14198F36890044D7AE /* UIKit.framework */; };
@@ -74,6 +76,10 @@
 		82CCD46A19ABEC5800667AD8 /* TournamentUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentUtilities.h; sourceTree = "<group>"; };
 		82CCD46B19ABEC5800667AD8 /* TournamentUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TournamentUtilities.m; sourceTree = "<group>"; };
 		82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMCScoreViewController.xib; sourceTree = "<group>"; };
+		82CCD47519AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreHeaderCelllTableViewCell.h; path = Cells/ScoreHeaderCelllTableViewCell.h; sourceTree = "<group>"; };
+		82CCD47619AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreHeaderCelllTableViewCell.m; path = Cells/ScoreHeaderCelllTableViewCell.m; sourceTree = "<group>"; };
+		82CCD47819AD6F9600667AD8 /* ScoreEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreEditTableViewCell.h; sourceTree = "<group>"; };
+		82CCD47919AD6F9600667AD8 /* ScoreEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreEditTableViewCell.m; sourceTree = "<group>"; };
 		82EA7D0D198F36890044D7AE /* Brackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EA7D10198F36890044D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82EA7D12198F36890044D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,10 @@
 				4F5D067319ACF540006B8850 /* JMCScoreTableViewController.h */,
 				4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */,
 				82CCD47219AC2FEE00667AD8 /* JMCScoreViewController.xib */,
+				82CCD47519AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.h */,
+				82CCD47619AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.m */,
+				82CCD47819AD6F9600667AD8 /* ScoreEditTableViewCell.h */,
+				82CCD47919AD6F9600667AD8 /* ScoreEditTableViewCell.m */,
 			);
 			name = ScoreViewController;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 			files = (
 				82CCD46319ABEC2F00667AD8 /* SingleElimination.m in Sources */,
 				82EA7D1D198F36890044D7AE /* main.m in Sources */,
+				82CCD47A19AD6F9600667AD8 /* ScoreEditTableViewCell.m in Sources */,
 				82FD06A51993103300B245CF /* JMCTournamentView.m in Sources */,
 				82CCD46019ABEC1E00667AD8 /* Game.m in Sources */,
 				82C679AF199F17E000B75C1F /* DoubleElimination.m in Sources */,
@@ -372,6 +383,7 @@
 				4F5D067A19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */,
 				82CCD46C19ABEC5800667AD8 /* TournamentUtilities.m in Sources */,
 				82CCD46619ABEC3D00667AD8 /* Team.m in Sources */,
+				82CCD47719AD6D4A00667AD8 /* ScoreHeaderCelllTableViewCell.m in Sources */,
 				82EA7D49198F42EF0044D7AE /* JMCGameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

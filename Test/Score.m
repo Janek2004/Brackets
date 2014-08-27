@@ -100,7 +100,7 @@
  *  @return number of points
  */
 -(NSUInteger)getPointsForSet:(NSUInteger )setIndex andTeam:(id)team{
-    assert(setIndex > self.sets.count-1);
+    assert(setIndex <= self.sets.count-1);
     NSDictionary * dict = self.sets[setIndex];
     assert([[dict objectForKey:TEAM1_KEY]isEqual:team]||[[dict objectForKey:TEAM2_KEY]isEqual:team]);
    

@@ -10,7 +10,8 @@
 #import "Score.h"
 #import "Tournament.h"
 #import "Game.h"
-
+#import "ScoreHeaderCelllTableViewCell.h"
+#import "ScoreEditTableViewCell.h"
 @interface JMCScoreTableViewController ()
 
 @end
@@ -130,30 +131,64 @@
 {
    
     if(indexPath.row == 0){
-        return [tableView dequeueReusableCellWithIdentifier:@"scoreHeader"];
+        ScoreHeaderCelllTableViewCell * cell =[tableView dequeueReusableCellWithIdentifier:@"scoreHeader"];
+        cell.team1Label.text = [self.score.team1 name];
+        cell.team2Label.text = [self.score.team2 name];
+        
+        
+        return cell;
     }
     else {
         if(self.canEdit){
             if(indexPath.row == [self tableView:tableView numberOfRowsInSection:indexPath.section]-1)
             {   //display final game cell
+              
+                
+                
                 return [tableView dequeueReusableCellWithIdentifier:@"finalScore"];
             }
-                return [tableView dequeueReusableCellWithIdentifier:@"editScore"];
             
+            ScoreEditTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"editScore"];
+            
+            cell.score1TextField.text = [NSString stringWithFormat:@"%d",[self.score getPointsForSet:indexPath.row-1 andTeam:self.score.team1]];
+             cell.score2TextField.text = [NSString stringWithFormat:@"%d",[self.score getPointsForSet:indexPath.row-1 andTeam:self.score.team2]];
+            
+            cell.setIndexLabel.text= [NSString stringWithFormat:@"%d",indexPath.row];
+            
+            [cell.addSetButton addTarget:self action:@selector(addSet:) forControlEvents:UIControlEventTouchUpInside];
+            
+            return cell;
         }
         else{
             return [tableView dequeueReusableCellWithIdentifier:@"score"];
         }
     }
     
-    
-    
-    // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"scoreHeader" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
     return nil;
 }
+
+
+-(NSIndexPath*)GetIndexPathFromSender:(id)sender{
+    if(!sender) { return nil; }
+    
+    if([sender isKindOfClass:[UITableViewCell class]])
+    {
+        UITableViewCell *cell = sender;
+        return [self.tableView indexPathForCell:cell];
+    }
+    
+    return [self GetIndexPathFromSender:((UIView*)[sender superview])];
+}
+
+
+
+- (IBAction)addSet:(id)sender {
+    NSIndexPath * indexPath = [self GetIndexPathFromSender:sender];
+    
+
+}
+
+
 
 
 /*
