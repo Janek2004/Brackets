@@ -23,9 +23,13 @@
 
 
 - (IBAction)segmentedControlValueChanged:(id)sender {
-    NSUInteger teamNr =  [sender selectedSegmentIndex];
+   // NSUInteger teamNr =  [sender selectedSegmentIndex];
+    
+   NSString * title = [_segmentedControl titleForSegmentAtIndex: [sender selectedSegmentIndex]];
+    
+    
     Tournament * t = [[Tournament alloc]init];
-    for(int i =0; i<teamNr;i++){
+    for(int i =0; i<[title integerValue] ;i++){
           [t addTeam:[NSString stringWithFormat:@"J %d",arc4random()%10000]];
     
     }

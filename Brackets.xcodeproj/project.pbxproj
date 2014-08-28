@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F5D067219ACD74C006B8850 /* yes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F5D067119ACD74C006B8850 /* yes.jpg */; };
 		4F5D067519ACF540006B8850 /* JMCScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */; };
 		4F5D067619ACF540006B8850 /* JMCScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */; };
 		4F5D067A19AD299D006B8850 /* JMCTextFieldDismissal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D067919AD299D006B8850 /* JMCTextFieldDismissal.m */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F5D067119ACD74C006B8850 /* yes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yes.jpg; sourceTree = "<group>"; };
 		4F5D067319ACF540006B8850 /* JMCScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCScoreTableViewController.h; path = ViewControllers/JMCScoreTableViewController.h; sourceTree = "<group>"; };
 		4F5D067419ACF540006B8850 /* JMCScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMCScoreTableViewController.m; path = ViewControllers/JMCScoreTableViewController.m; sourceTree = "<group>"; };
 		4F5D067819AD299D006B8850 /* JMCTextFieldDismissal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMCTextFieldDismissal.h; path = Test/JMCTextFieldDismissal.h; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				82EA7D1F198F36890044D7AE /* JMCAppDelegate.h */,
 				82EA7D20198F36890044D7AE /* JMCAppDelegate.m */,
 				82EA7D22198F36890044D7AE /* Main.storyboard */,
-				4F5D067119ACD74C006B8850 /* yes.jpg */,
 				82EA7D25198F36890044D7AE /* JMCViewController.h */,
 				82EA7D26198F36890044D7AE /* JMCViewController.m */,
 				4F5D067719ACF552006B8850 /* ScoreViewController */,
@@ -339,7 +336,6 @@
 				82EA7D29198F36890044D7AE /* Images.xcassets in Resources */,
 				82EA7D1B198F36890044D7AE /* InfoPlist.strings in Resources */,
 				82CCD47319AC2FEE00667AD8 /* JMCScoreViewController.xib in Resources */,
-				4F5D067219ACD74C006B8850 /* yes.jpg in Resources */,
 				82FD06A119930D4900B245CF /* gameButtonView.png in Resources */,
 				82FD06A219930D4900B245CF /* gameButtonView@2x.png in Resources */,
 				82EA7D24198F36890044D7AE /* Main.storyboard in Resources */,

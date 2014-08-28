@@ -485,9 +485,160 @@
             g5.left = g1;
             
         } break;
-   
+        
+        case 9:{
+            finalGame = [Game new];
+            finalGame.number = @8;
+            finalGame.displayIndex = 0;
+            finalGame.defaultTeam1Text =@"W5";
+            finalGame.defaultTeam2Text =@"W6";
+            
+           
+            
+            Game *g6 = [Game new];
+            g6.parent = finalGame;
+            g6.number = @6;
+            g6.defaultTeam1Text = @"W5";
+            g6.defaultTeam2Text = @"W2";
+            g6.displayIndex = 0;
+            finalGame.left = g6;
+            
             
 
+            Game *g7 = [Game new];
+            g7.parent = finalGame;
+            g7.number = @7;
+            g7.defaultTeam1Text = @"W3";
+            g7.defaultTeam2Text = @"W4";
+            g7.displayIndex = 1;
+            finalGame.right = g7;
+
+            
+            
+            Game *g5 = [Game new];
+            g5.parent = g6;
+            g5.number = @5;
+            g5.team1 =self.teams[0];
+            g5.defaultTeam2Text = @"W1";
+            
+            g5.displayIndex = 0;
+            g6.left = g5;
+            
+            Game *g4 = [Game new];
+            g4.parent = g7;
+            g4.number = @4;
+            g4.team1 =self.teams[1];
+            g4.team2 =self.teams[6];
+            g4.displayIndex = 3;
+            g7.right = g4;
+            
+            
+            Game *g3 = [Game new];
+            g3.parent = g7;
+            g3.number = @3;
+            g3.team1 =self.teams[2];
+            g3.team2 =self.teams[5];
+            g3.displayIndex = 2;
+            g7.left = g3;
+            
+            Game *g2 = [Game new];
+            g2.parent = g6;
+            g2.number = @2;
+            g2.team1 =self.teams[3];
+            g2.team2 =self.teams[4];
+            g2.displayIndex = 1;
+            g6.right = g2;
+            
+            Game *g1 = [Game new];
+            g1.parent = g5;
+            g1.number = @1;
+            g1.team1 =self.teams[7];
+            g1.team2 =self.teams[8];
+            g1.displayIndex = 1;
+            g5.left = g1;
+            
+        } break;
+            
+        case 10:{
+            finalGame = [Game new];
+            finalGame.number = @9;
+            finalGame.displayIndex = 0;
+            finalGame.defaultTeam1Text =@"W7";
+            finalGame.defaultTeam2Text =@"W8";
+            
+            Game *g7 = [Game new];
+            g7.parent = finalGame;
+            g7.number = @7;
+            g7.defaultTeam1Text = @"W5";
+            g7.defaultTeam2Text = @"W3";
+            g7.displayIndex = 0;
+            finalGame.left = g7;
+            
+            Game *g8 = [Game new];
+            g8.parent = finalGame;
+            g8.number = @8;
+            g8.defaultTeam1Text = @"W6";
+            g8.defaultTeam2Text = @"W4";
+            g8.displayIndex = 1;
+            finalGame.right = g8;
+          
+            Game *g5 = [Game new];
+            g5.parent = g7;
+            g5.number = @5;
+            g5.team1 =self.teams[0];
+            g5.defaultTeam2Text = @"W1";
+            g5.displayIndex = 0;
+            g7.left = g5;
+            
+            
+            Game *g3 = [Game new];
+            g3.parent = g7;
+            g3.number = @3;
+            g3.team1 =self.teams[3];
+            g3.team2 =self.teams[4];
+            g3.displayIndex = 1;
+            g7.right = g3;
+            
+            Game *g6 = [Game new];
+            g6.parent = g8;
+            g6.number = @6;
+            g6.team1 = self.teams[1];
+            g6.defaultTeam2Text = @"W2";
+            g6.displayIndex = 2;
+            g8.left = g6;
+            
+            Game *g4 = [Game new];
+            g4.parent = g8;
+            g4.number = @4;
+            g4.team1 =self.teams[2];
+            g4.team2 =self.teams[5];
+            g4.displayIndex = 3;
+            g8.right = g4;
+            
+            Game *g2 = [Game new];
+            g2.parent = g6;
+            g2.number = @2;
+            g2.team1 =self.teams[9];
+            g2.team2 =self.teams[6];
+            g2.displayIndex = 5;
+            g6.right = g2;
+            
+            Game *g1 = [Game new];
+            g1.parent = g5;
+            g1.number = @1;
+            g1.team1 =self.teams[7];
+            g1.team2 =self.teams[8];
+            g1.displayIndex = 1;
+            g5.left = g1;
+            
+            
+            
+            
+        } break;
+            
+            
+            
+            
         default: {return finalGame;}
             
     }
