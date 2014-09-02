@@ -341,7 +341,7 @@
             Game *g4 = [Game new];
             g4.parent = finalGame;
             g4.number = @4;
-            g4.team2 =self.teams[self.teams.count -1];
+            g4.team2 =self.teams[1];
             g4.defaultTeam1Text = @"W2";
             g4.displayIndex = 1;
             finalGame.right = g4;
@@ -382,9 +382,8 @@
             Game *g5 = [Game new];
             g5.parent = finalGame;
             g5.number = @5;
-            g5.team2 =self.teams[self.teams.count -1];
             g5.defaultTeam1Text = @"W2";
-            g5.defaultTeam1Text = @"W3";
+            g5.defaultTeam2Text = @"W3";
             g5.displayIndex = 1;
             finalGame.right = g5;
 
@@ -444,7 +443,6 @@
             Game *g5 = [Game new];
             g5.parent = finalGame;
             g5.number = @5;
-            g5.team1 =self.teams[0];
             g5.defaultTeam1Text = @"W1";
             g5.defaultTeam2Text = @"W2";
 

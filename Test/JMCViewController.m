@@ -30,7 +30,7 @@
     
     Tournament * t = [[Tournament alloc]init];
     for(int i =0; i<[title integerValue] ;i++){
-          [t addTeam:[NSString stringWithFormat:@"J %d",arc4random()%10000]];
+          [t addTeam:[NSString stringWithFormat:@"J %d",i]];
     
     }
     [t setFormat:kSingleElimination];
