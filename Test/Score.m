@@ -46,7 +46,7 @@
  *  @param team2  team 2
  *  @param final  is it a final score?
  */
--(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;{
+-(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 atSetIndex:(NSUInteger)index;{
     
      NSMutableDictionary * dict = [NSMutableDictionary new];
      [dict setObject:score1 forKey:SCORE1_KEY];
@@ -54,15 +54,13 @@
     
      [dict setObject:team1 forKey:TEAM1_KEY];
      [dict setObject:team2 forKey:TEAM2_KEY];
-     [dict setObject:@(final) forKey:FINAL_KEY];
-    
     
      if(!self.team1) _team1 = team1;
      if(!self.team2) _team2 = team2;
      assert(self.team1== team1);
      assert(self.team2== team2);
-    
-    [_sets addObject:dict];
+    [_sets insertObject:dict atIndex:index];
+
 }
 
 

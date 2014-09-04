@@ -12,6 +12,7 @@
 @property(nonatomic,strong) NSMutableArray * sets;
 @property(nonatomic,strong,readonly) id team1;
 @property(nonatomic,strong,readonly) id team2;
+@property(nonatomic, assign) BOOL finalScore;
 
 /**
  *  Setting up a score. It adds a set to a dictionary with sets
@@ -22,7 +23,7 @@
  *  @param team2  team 2
  *  @param final  is it a final score?
  */
--(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 final:(BOOL)final;
+-(void)setScore:(NSNumber *)score1 andScore:(NSNumber *)score2 betweenTeam:(id)team1 andTeam2:(id)team2 atSetIndex:(NSUInteger)index;
 /**
  *  Deletes set
  *

@@ -17,15 +17,27 @@
 #define MIN_GAME_SPACE 25
 #define MARGIN 0
 
-@interface JMCTournamentView()
+@interface JMCTournamentView()<GameEvents>
 {
     NSUInteger numberOfLevels;
+    
 }
 @property(nonatomic,strong)id <TournamentProtocol> tournament;
 
 @end
 
 @implementation JMCTournamentView
+
+
+-(void)showGameInfo:(id)sender{
+    NSLog(@"%@",sender);
+    [self.delegate gameInfo:sender];
+}
+
+-(void)showTeamInfo:(id)sender{
+
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -45,9 +57,10 @@
  *  @return instance of the tournament view
  */
 
--(id)initWithTournament:(id<TournamentProtocol>) tournament{
+-(id)initWithTournament:(id<TournamentProtocol>) tournament
+{
     CGRect frame;
-   
+
     NSUInteger game_width = GAME_WIDTH;
      self.tournament = tournament;
     numberOfLevels = [tournament numberOfLevels];
@@ -92,6 +105,7 @@ void displayBracket1(Game * root){
     NSMutableDictionary * md = [NSMutableDictionary new];
     while(queue.count>0){
         Game * g= queue.lastObject;
+        
         NSLog(@"Game %@ ",g);
         
         NSMutableArray * ma = [md objectForKey:@(currentLevel)];
@@ -238,6 +252,7 @@ void displayBracket1(Game * root){
     CGRect frame =[self calculateGameFrameAtLevel:level index:index];
     
     JMCGameView * gm = [[JMCGameView alloc]initWithGame:game andFrame:frame];
+    gm.delegate = self;
     [self addSubview:gm];
     
 }

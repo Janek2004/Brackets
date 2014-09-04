@@ -10,9 +10,11 @@
 #import "JMCGameView.h"
 #import "Tournament.h"
 #import "JMCTournamentView.h"
+#import "JMCScoreTableViewController.h"
 #import "Game.h"
+#import "Score.h"
 
-@interface JMCViewController ()
+@interface JMCViewController ()<TournamentView>
     @property(nonatomic,strong) UIScrollView * scrollView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
@@ -22,6 +24,26 @@
 @implementation JMCViewController
 
 
+/**
+ *  Game Info from delegate
+ *
+ *  @param game gmae
+ */
+-(void)gameInfo:(Game *)game{
+    JMCScoreTableViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"JMCScoreTableViewController"];
+    
+    Score * score = game.score;
+    if(!score)
+    {
+        score =  [Score new];
+       // score =
+    }
+    
+    controller.score = score;
+    [self.navigationController pushViewController:controller animated:YES];
+
+
+}
 - (IBAction)segmentedControlValueChanged:(id)sender {
    // NSUInteger teamNr =  [sender selectedSegmentIndex];
     
@@ -91,7 +113,9 @@
     
     [t setFormat:kSingleElimination];
     
-    JMCTournamentView * tv = [[JMCTournamentView alloc]initWithTournament:t.tournament];
+    JMCTournamentView * tv = [[JMCTournamentView alloc]initWithTournament:t.tournament ];
+    tv.delegate = self;
+    
     
     [_scrollView addSubview:tv];
     [_scrollView setContentSize:CGSizeMake(1000, 1000)];

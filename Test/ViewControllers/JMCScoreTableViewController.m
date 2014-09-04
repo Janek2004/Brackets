@@ -64,8 +64,9 @@
     
     Score * s = [Score new];
     
-    [s setScore:@21 andScore:@13 betweenTeam:game.team1 andTeam2:game.team2 final:YES];
-    [s setScore:@15 andScore:@21 betweenTeam:game.team1 andTeam2:game.team2 final:NO];
+    [s setScore:@21 andScore:@13 betweenTeam:game.team1 andTeam2:game.team2 atSetIndex:0];
+    [s setScore:@15 andScore:@21 betweenTeam:game.team1 andTeam2:game.team2 atSetIndex:1];
+    s.finalScore = YES;
     
     [self setScore:s];
 }
@@ -111,7 +112,7 @@
     NSUInteger numberOfSets = [self.score getSetsCount];
     if(numberOfSets == 0){
         //add a new set
-        [_score setScore:@0 andScore:@0 betweenTeam:self.score.team1 andTeam2:self.score.team2 final:NO];
+        [_score setScore:@0 andScore:@0 betweenTeam:self.score.team1 andTeam2:self.score.team2 atSetIndex:0];
         numberOfSets =1;
     }
 
@@ -184,7 +185,7 @@
 
 - (IBAction)addSet:(id)sender {
     NSIndexPath * indexPath = [self GetIndexPathFromSender:sender];
-    
+    //self.score
 
 }
 

@@ -173,8 +173,8 @@
     
     Score * s = [Score new];
     
-    [s setScore:@21 andScore:@13 betweenTeam:game.team1 andTeam2:game.team2 final:YES];
-    [s setScore:@15 andScore:@21 betweenTeam:game.team1 andTeam2:game.team2 final:NO];
+    [s setScore:@21 andScore:@13 betweenTeam:game.team1 andTeam2:game.team2 atSetIndex:0];
+    [s setScore:@15 andScore:@21 betweenTeam:game.team1 andTeam2:game.team2 atSetIndex:1];;
     
     [t setScore:s game:game];
     
@@ -186,7 +186,7 @@
     assert([s getSetsForTeam:game.team2 won:NO]==1);
     
     
-    [s setScore:@21 andScore:@19 betweenTeam:game.team1 andTeam2:game.team2 final:YES];
+    [s setScore:@21 andScore:@19 betweenTeam:game.team1 andTeam2:game.team2 atSetIndex:0];;
     [t setScore:s game:game];
     
     assert([s getSetsForTeam:game.team1 won:YES]==2);
@@ -206,14 +206,14 @@
     
     Score * s1 = [Score new];
     
-    [s1 setScore:@21 andScore:@11 betweenTeam:game2.team1 andTeam2:game2.team2 final:YES];
-    [s1 setScore:@21 andScore:@15 betweenTeam:game2.team1 andTeam2:game2.team2 final:YES];
+    [s1 setScore:@21 andScore:@11 betweenTeam:game2.team1 andTeam2:game2.team2 atSetIndex:0];;
+    [s1 setScore:@21 andScore:@15 betweenTeam:game2.team1 andTeam2:game2.team2 atSetIndex:1];
     
     [t setScore:s1 game:game2];
     
     Score * s2 = [Score new];
-    [s2 setScore:@21 andScore:@19 betweenTeam:game3.team1 andTeam2:game3.team2 final:YES];
-    [s2 setScore:@21 andScore:@19 betweenTeam:game3.team1 andTeam2:game3.team2 final:YES];
+    [s2 setScore:@21 andScore:@19 betweenTeam:game3.team1 andTeam2:game3.team2 atSetIndex:0];
+    [s2 setScore:@21 andScore:@19 betweenTeam:game3.team1 andTeam2:game3.team2 atSetIndex:1];
     
     [t setScore:s2 game:game3];
     

@@ -65,7 +65,7 @@
 -(void)showGameInfo:(id)sender{
    
     //get game
-    [self.delegate showGameInfo:sender];
+    [self.delegate showGameInfo:self.game];
 }
 
 

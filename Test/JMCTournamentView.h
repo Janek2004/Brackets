@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "TournamentProtocol.h"
 
+@protocol TournamentView <NSObject>
+-(void)gameInfo:(id)game;
+
+
+@end
+
 @interface JMCTournamentView : UIView
+@property(nonatomic,assign) id<TournamentView> delegate;
+
 -(id)initWithTournament:(id<TournamentProtocol>) tournament;
 -(CGFloat)calculateHeight:(NSUInteger)nrVerticalGames;
 -(CGRect)calculateGameFrameAtLevel:(NSUInteger)level index:(NSUInteger)index;
